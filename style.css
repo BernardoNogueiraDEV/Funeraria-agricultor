@@ -11,11 +11,7 @@
 header{
     position:fixed;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-<<<<<<< HEAD
-    top: 5%;
-=======
     top: 0;
->>>>>>> 784a2f9 (arrumando o html e css)
     width: 100%;
     left: 0%;
 }
@@ -31,21 +27,6 @@ body{
 
 .botão_conhecer{
     position: relative;
-<<<<<<< HEAD
-    top: 50px;
-    z-index: 3;
-    left: 25%;
-    border-radius: 40px;
-    border-style: hidden;
-    background-color: white;
-    width: 40%;
-    cursor: pointer;
-    padding: 10px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.5em;
-    font-style: bold ;
-    top: -8vh;
-=======
     z-index: 3;
     left: 45%;
     border-radius: 40px;
@@ -57,33 +38,20 @@ body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.5em;
     font-style: bold ;
->>>>>>> 784a2f9 (arrumando o html e css)
     font-weight: 400;
 }
 
 .inicio{
     position: absolute;
-<<<<<<< HEAD
-    top: 10%;
-    color: rgb(255, 255, 255);
-    left: 48%;
-    top: 3%;
-=======
     color: rgb(255, 255, 255);
     left: 56%;
     top: 7%;
     display: flex;
     flex-direction: column;
->>>>>>> 784a2f9 (arrumando o html e css)
 
     
 }
 .inicio h1{
-<<<<<<< HEAD
-    font-style: bold;
-    -webkit-text-stroke: 2px black;
-    font-weight: 400;
-=======
     text-align: left;
     left: -10%;
     position: relative;
@@ -91,17 +59,12 @@ body{
     -webkit-text-stroke: 2px black;
     font-weight: 400;
     font-size: 6em;
->>>>>>> 784a2f9 (arrumando o html e css)
 }
 .inicio h2{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     position: relative;
     top: -50px;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 784a2f9 (arrumando o html e css)
 .pag1{
     position: fixed;
     width: 100%;
@@ -113,10 +76,6 @@ body{
 /* From Uiverse.io by JulanDeAlb */ 
 .hamburger {
     cursor: pointer;
-<<<<<<< HEAD
-    padding-right: 92%;
-=======
->>>>>>> 784a2f9 (arrumando o html e css)
   }
   
   .hamburger input {
@@ -125,11 +84,7 @@ body{
   
   .hamburger svg {
     /* The size of the SVG defines the overall size */
-<<<<<<< HEAD
-    height: 3em;
-=======
     height: 7em;
->>>>>>> 784a2f9 (arrumando o html e css)
     /* Define the transition for transforming the SVG */
     transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -159,17 +114,6 @@ body{
   }
   
   .alinhar_rodape{
-<<<<<<< HEAD
-    position:absolute;   
-    top: 20%;
-    left: 10%;
-
-  }
-  nav{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-=======
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -182,15 +126,10 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly
->>>>>>> 784a2f9 (arrumando o html e css)
   }
   a{
     color: white;
     cursor:pointer;
-<<<<<<< HEAD
-    font-size: 120%;
-=======
     font-size: 25px;
->>>>>>> 784a2f9 (arrumando o html e css)
-    
+  
   }
