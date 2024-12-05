@@ -43,7 +43,7 @@ html{
     font-size: 2em;
     font-style: bold ;
     font-weight: 400;
-    top: 	-80px;
+    top: -80px;
 }
 
 .inicio{
@@ -153,7 +153,7 @@ html{
 
   .pag2 {
       display: flex;
-      height: 110vh;
+      height: 120vh;
       background-color: #413b57;
       color: #eeebeb;
       font-family: 'Open Sans', sans-serif;
@@ -168,7 +168,7 @@ html{
   
   .pag2 .img2 img {
       width: 100%;
-      height: 100%;
+      height: 100vh;
       object-fit: cover;
   }
   
@@ -236,5 +236,116 @@ html{
           font-size: 0.8em;
       }
   }
+
+.imagem2{
+    padding: 80px;
+}
+.pag3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+.fundo3{
+    background-size: cover;
+    z-index: -1;
+    width: 100%;
+    height: 110vh;
+    position: absolute;
+    filter: blur(7px);
+}
+/* From Uiverse.io by LeCurry24 */ 
+.card {
+    --bg-card: #ffffff;
+    --primary: #6d28d9;
+    --primary-800: #ffffff;
+    --primary-shadow: #2e1065;
+    --light: #d9d9d9;
+    --zinc-800: #18181b;
+    --bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
   
+    position: relative;
   
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  
+    padding: 1rem;
+    width: 600px;
+    background-color: var(--bg-card);
+  
+    border-radius: 1rem;
+  }
+  
+  .image_container {
+    overflow: hidden;
+    cursor: pointer;
+  
+    position: relative;
+    z-index: 5;
+  
+    width: 100%;
+    height:20rem;
+    background-color: var(--primary-800);
+  
+    border-radius: 0.5rem;
+  }
+  
+  .image_container .image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    width: 50%;
+    height: 20vh;
+    fill: var(--light);
+  }
+  
+  .title {
+    overflow: clip;
+  
+    width: 100%;
+  
+    font-size: 4rem;
+    font-weight: 600;
+    color: black;
+    text-transform: capitalize;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+  }
+  .caixoesPag3{
+    font-size: 3.5em;
+  }
+  .cart-button {
+    cursor: pointer;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+  
+    padding: 0.5rem;
+    width: 100%;
+    background-color: rgb(59, 172, 247);
+  
+    font-size: 2rem;
+    font-weight: 500;
+    color: black;
+    text-wrap: nowrap;
+  
+    border: 2px solid hsla(262, 83%, 58%, 0.5);
+    border-radius: 0.5rem;
+    box-shadow: inset 0 0 0.25rem 1px var(--light);
+  }
+  .description{
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: justify;
+  }
+  .price{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+  }
