@@ -4,8 +4,9 @@
 }
 
 .titulo{
+    top: -40px;
     font-family: "Rosella";
-    font-size: 5em;
+    font-size: 6em !important;
 }
 
 header{
@@ -17,6 +18,7 @@ header{
 }
 
 .fundo{
+  transform: rotate(-5deg);
     width: 100%;
     height: 100vh;
     z-index: -1;
@@ -253,29 +255,31 @@ html{
     width: 100%;
     height: 110vh;
     position: absolute;
-    filter: blur(7px);
 }
 /* From Uiverse.io by LeCurry24 */ 
 .card {
-    --bg-card: #ffffff;
-    --primary: #6d28d9;
-    --primary-800: #ffffff;
-    --primary-shadow: #2e1065;
-    --light: #d9d9d9;
-    --zinc-800: #18181b;
-    --bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
+  user-select: none;
+  opacity: 0.2; /* Cartões fora de foco são semitransparentes */
+  transform: scale(0.9); /* Reduz tamanho dos cartões fora de foco */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Suaviza a mudança */
+  --bg-card: #ffffff;
+  --primary: #6d28d9;
+  --primary-800: #ffffff;
+  --primary-shadow: #2e1065;
+  --light: #d9d9d9;
+  --zinc-800: #18181b;
+  --bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
+  display: flex;
+  position: relative;
   
-    position: relative;
+  flex-direction: column;
+  gap: 0.15rem;
   
-    display: flex;
-    flex-direction: column;
-    gap: 0.55rem;
+  padding: 1rem;
+  width: 600px;
+  background-color: var(--bg-card);
   
-    padding: 1rem;
-    width: 600px;
-    background-color: var(--bg-card);
-  
-    border-radius: 1rem;
+  border-radius: 1rem;
   }
   
   .image_container {
@@ -316,7 +320,9 @@ html{
     text-overflow: ellipsis;
   }
   .caixoesPag3{
-    font-size: 3.5em;
+    font-size: 5.5em;
+    color: rgb(255, 255, 255);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   .cart-button {
     cursor: pointer;
@@ -324,7 +330,7 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.35rem;
   
     padding: 0.5rem;
     width: 100%;
@@ -339,13 +345,60 @@ html{
     border-radius: 0.5rem;
     box-shadow: inset 0 0 0.25rem 1px var(--light);
   }
+  .cart-button:hover{
+    background-color: rgb(59, 172, 247, 0.8);
+  }
   .description{
     color: black;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: justify;
   }
   .price{
+    position: relative;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2em;
+    font-size: 3em;
   }
+
+.caixoesCarrossel{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 35%;
+  width: 80%;
+  top: 235%;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 265%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 100;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.card.visible{
+  opacity: 1;
+  display: visible;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease; /* Animação da transição */
+}
