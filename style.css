@@ -261,14 +261,13 @@ html{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 110vh;
-
+    height: 150vh;
 }
 .fundo3{
     background-size: cover;
     z-index: -1;
     width: 100%;
-    height: 160vh;
+    height: 150vh;
     position: absolute;
 }
 /* From Uiverse.io by LeCurry24 */ 
@@ -293,6 +292,7 @@ html{
   justify-content: space-between;
   padding: 1rem;
   width: 600px;
+  height: 1200px;
   background-color: var(--bg-card);
   
   border-radius: 1rem;
@@ -336,6 +336,8 @@ html{
     text-overflow: ellipsis;
   }
   .caixoesPag3{
+    margin: 0;
+    
     font-size: 5.5em;
     color: rgb(0, 0, 0);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -432,4 +434,86 @@ button.prev:hover, button.next:hover {
 .pesquisaButao{
   height: 30px;
   border-radius: 2rem;
+}
+.pag4{
+  top: 370%;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: gray;
+}
+.pag4 h1{
+  margin: 0;
+  font-size: 5.5em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.card-flores{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  width: 600px;
+  height: 80vh;
+  background-color: white;
+  border-radius: 1rem;
+}
+.card-flores h1{
+  font-size: 3em;
+  background-color: gray;
+  padding: 5px;
+  border-radius: 1rem;
+  z-index: 1;
+  width: 90%;
+  left: 50%;
+  transform: translate(-50%);
+  position: relative;
+  top: 10px;
+}
+
+.radio{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+  left: 50%;
+  height: 73vh;
+  position: relative;
+  transform: translate(-50%);
+  justify-content: space-evenly;
+}
+.radio div{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+  margin-bottom: 50px;
+  text-align: left;
+  font-size: 3em;
+}
+input[type="radio"] {
+  width: 50px;
+  height: 50px;
+}
+.radio button{
+  top: 90%;
+  position: absolute;
+}
+.pesquisarCoroa{
+  width: 90%;
+  cursor: pointer;
+  left: 50%;
+  transform: translate(-50%);
+  height: 5vh;
+  border-radius: 1rem;
+  padding: 5px;
+  font-size: 1.2em;
+  background-color: gray;
+}
+.pesquisarCoroa:hover{
+  background-color: rgb(194, 189, 189);
 }
