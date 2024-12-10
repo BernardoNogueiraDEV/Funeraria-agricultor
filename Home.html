@@ -25,12 +25,12 @@
             <button class="botão_conhecer">Venha nos conhecer!</button>
 
             <!--Rodapé-->
-            <header>
+            <header id="header">
 
                 <div class="alinhar_rodape">
                     <label class="hamburger">
-                        <input type="checkbox">
-                        <svg viewBox="0 0 32 32">
+                        <input type="checkbox" id="menu">
+                        <svg viewBox="0 0 32 32" >
                             <path class="line line-top-bottom"
                                 d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
                             </path>
@@ -38,7 +38,7 @@
                         </svg>
                     </label>
 
-                    <nav>
+                    <nav id="navegacao">
                         <ul>
                             <a href="#caixao">Caixões</a>
                         </ul>
@@ -57,6 +57,10 @@
 
                         <ul>
                             <a href="#">Suporte</a>
+                        </ul>
+                        <ul>
+                            <input type="text" name="pesquisa" id="pesquisa">
+                            <button class="pesquisaButao">Pesquisar</button>
                         </ul>
                     </nav>
 
@@ -124,14 +128,16 @@
                         <p>
                             <strong>Formato:</strong> Retangular com uma leve afunilação nas extremidades superiores e inferiores. <br>
                             <strong>Material:</strong> Madeira em tom marrom escuro com textura amadeirada, bem polida e envernizada para realçar o acabamento. <br>
-                            <strong>Alças:</strong> Feitas de madeira com detalhes metálicos para reforço ou fixação, projetadas para funcionalidade e estética simples.br <br>
+                            <strong>Alças:</strong> Feitas de madeira com detalhes metálicos para reforço ou fixação, projetadas para funcionalidade e estética simples. <br>
                             <strong>Tampa:</strong> Também em madeira marrom escura, envernizada, com encaixe simples e acabamento discreto. <br>
                             <strong>Interior:</strong> Pode ser forrado com tecido branco ou bege, em algodão ou poliéster, sem ornamentos sofisticados. <br>
                         </p>
                     </div>
 
                     <div class="price">
-                        <p>R$ 750,00</p>
+                        <p>Valor parcelado ate 10x sem juros: <br></p>
+                        <p class="valor">R$ 750,00</p>
+                        <p class="desconto"></p>
                     </div>
 
                     <button class="cart-button">
@@ -150,16 +156,19 @@
 
                     <div class="description">
                         <p>
+                            <br> <br>
                             <strong>Formato:</strong> Retangular, com superfície vernizada e com acabamento externo. <br>
                             <strong>Material:</strong> Madeira pinho semdetalhes decorativos. <br>
-                            <strong>Alças:</strong> De forma plana e com fechos simples,visando a fácil abertura.<br>
-                            <strong>Tampa:</strong> Feita de madeiracolocadas nas laterais, para facilitar o transporte.<br>
-                            <strong>Interior:</strong> Forro acolchoado em tecido de cetim de cor cinza.<br>
+                            <strong>Alças:</strong> Feita de madeira colocadas nas laterais, para facilitar o transporte.<br>
+                            <strong>Tampa:</strong> De forma plana e com fechos simples,visando a fácil abertura.<br>
+                            <strong>Interior:</strong> Forro acolchoado em tecido de cetim de cor cinza.<br> <br> <br>  <br>
                         </p>
                     </div>
 
                     <div class="price">
-                        <p>R$ 550,00</p>
+                        <p>Valor parcelado ate 10x sem juros: <br></p>
+                        <p class="valor">R$ 550,00</p>
+                        <p class="desconto"></p>
                     </div>
 
                     <button class="cart-button">
@@ -178,16 +187,18 @@
 
                     <div class="description">
                         <p>
-                            <strong>Formato:</strong> Retangular com uma leve afunilação nas extremidades superiores e inferiores. <br>
-                            <strong>Material:</strong> Madeira em tom marrom escuro com textura amadeirada, bem polida e envernizada para realçar o acabamento. <br>
-                            <strong>Alças:</strong> Feitas de madeira com detalhes metálicos para reforço ou fixação, projetadas para funcionalidade e estética simples.br <br>
-                            <strong>Tampa:</strong> Também em madeira marrom escura, envernizada, com encaixe simples e acabamento discreto. <br>
-                            <strong>Interior:</strong> Pode ser forrado com tecido branco ou bege, em algodão ou poliéster, sem ornamentos sofisticados. <br>
+                            <strong>Formato:</strong>  Retangular com bordas arredondadas.<br>
+                            <strong>Material:</strong>  Madeira de pinho, com acabamento liso e simples. <br>
+                            <strong>Alças:</strong> Alças metálicas de barra simples, com acabamento em cromo.<br>
+                            <strong>Tampa:</strong> Plana, com fechos de metal. <br>
+                            <strong>Interior:</strong> Forrado com tecido de algodão na cor bege. <br>
                         </p>
                     </div>
 
                     <div class="price">
-                        <p>R$ 950,00</p>
+                        <p>Valor parcelado ate 10x sem juros: <br></p>
+                        <p class="valor">R$ 950,00</p>
+                        <p class="desconto"></p>
                     </div>
 
                     <button class="cart-button">
@@ -206,16 +217,18 @@
 
                     <div class="description">
                         <p>
-                            <strong>Formato:</strong> Retangular com uma leve afunilação nas extremidades superiores e inferiores. <br>
-                            <strong>Material:</strong> Madeira em tom marrom escuro com textura amadeirada, bem polida e envernizada para realçar o acabamento. <br>
-                            <strong>Alças:</strong> Feitas de madeira com detalhes metálicos para reforço ou fixação, projetadas para funcionalidade e estética simples.br <br>
-                            <strong>Tampa:</strong> Também em madeira marrom escura, envernizada, com encaixe simples e acabamento discreto. <br>
-                            <strong>Interior:</strong> Pode ser forrado com tecido branco ou bege, em algodão ou poliéster, sem ornamentos sofisticados. <br>
+                            <strong>Formato:</strong> Retangular com linhas retas e cantos definidos.<br>
+                            <strong>Material:</strong> MDF, revestido com aparência de madeira.                            <br>
+                            <strong>Alças:</strong>  Alças de madeira pintadas, com acabamento básico.<br>
+                            <strong>Tampa:</strong>  Plana e lisa.<br>
+                            <strong>Interior:</strong> Forro de tecido sintético, na cor clara. <br>
                         </p>
                     </div>
 
                     <div class="price">
-                        <p>R$ 650,00</p>
+                        <p>Valor parcelado ate 10x sem juros: <br></p>
+                        <p class="valor">R$ 650,00</p>
+                        <p class="desconto"></p>
                     </div>
 
                     <button class="cart-button">
@@ -234,16 +247,18 @@
 
                     <div class="description">
                         <p>
-                            <strong>Formato:</strong> Retangular com uma leve afunilação nas extremidades superiores e inferiores. <br>
-                            <strong>Material:</strong> Madeira em tom marrom escuro com textura amadeirada, bem polida e envernizada para realçar o acabamento. <br>
-                            <strong>Alças:</strong> Feitas de madeira com detalhes metálicos para reforço ou fixação, projetadas para funcionalidade e estética simples.br <br>
-                            <strong>Tampa:</strong> Também em madeira marrom escura, envernizada, com encaixe simples e acabamento discreto. <br>
-                            <strong>Interior:</strong> Pode ser forrado com tecido branco ou bege, em algodão ou poliéster, sem ornamentos sofisticados. <br>
+                            <strong>Formato:</strong> Retangular com bordas mais suaves.                            <br>
+                            <strong>Material:</strong> Compensado natural, com acabamento rústico, com verniz.                            <br>
+                            <strong>Alças:</strong> Alças de material resistente, presas por furos no caixão.<br>
+                            <strong>Tampa:</strong> Levemente inclinada para um visual mais simples.<br>
+                            <strong>Interior:</strong>  Forro de tecido sintético, com um acolchoado básico. <br>
                         </p>
                     </div>
 
                     <div class="price">
-                        <p>R$ 999,90</p>
+                        <p>Valor parcelado ate 10x sem juros: <br></p>
+                        <p class="valor">R$ 999,90</p>
+                        <p class="desconto"></p>
                     </div>
 
                     <button class="cart-button">
@@ -262,16 +277,18 @@
 
                     <div class="description">
                         <p>
-                            <strong>Formato:</strong> Retangular com uma leve afunilação nas extremidades superiores e inferiores. <br>
-                            <strong>Material:</strong> Madeira em tom marrom escuro com textura amadeirada, bem polida e envernizada para realçar o acabamento. <br>
-                            <strong>Alças:</strong> Feitas de madeira com detalhes metálicos para reforço ou fixação, projetadas para funcionalidade e estética simples.br <br>
-                            <strong>Tampa:</strong> Também em madeira marrom escura, envernizada, com encaixe simples e acabamento discreto. <br>
-                            <strong>Interior:</strong> Pode ser forrado com tecido branco ou bege, em algodão ou poliéster, sem ornamentos sofisticados. <br>
+                            <strong>Formato:</strong> Retangular, com bordas arredondadas e acabamento sofisticado.                            <br>
+                            <strong>Material:</strong> Madeira nobre, com acabamento polido e brilhante.                            <br>
+                            <strong>Alças:</strong> Alças metálicas douradas, com design ornamentado e acabamento refinado, integradas de forma discreta nas laterais. <br>
+                            <strong>Tampa:</strong> Plana, com bordas delicadamente trabalhadas e detalhes dourados, como molduras elegantes.<br>
+                            <strong>Interior:</strong> Forro luxuoso de veludo de cetim em tom claro.<br>
                         </p>
                     </div>
 
                     <div class="price">
-                        <p>R$ 1600,58</p>
+                        <p>Valor parcelado ate 10x sem juros: <br></p>
+                        <p class="valor">R$ 1600,58</p>
+                        <p class="desconto"></p>
                     </div>
 
                     <button class="cart-button">
@@ -290,16 +307,18 @@
 
                     <div class="description">
                         <p>
-                            <strong>Formato:</strong> Retangular com uma leve afunilação nas extremidades superiores e inferiores. <br>
-                            <strong>Material:</strong> Madeira em tom marrom escuro com textura amadeirada, bem polida e envernizada para realçar o acabamento. <br>
-                            <strong>Alças:</strong> Feitas de madeira com detalhes metálicos para reforço ou fixação, projetadas para funcionalidade e estética simples.br <br>
-                            <strong>Tampa:</strong> Também em madeira marrom escura, envernizada, com encaixe simples e acabamento discreto. <br>
-                            <strong>Interior:</strong> Pode ser forrado com tecido branco ou bege, em algodão ou poliéster, sem ornamentos sofisticados. <br>
+                            <strong>Formato:</strong> Retangular, com linhas suaves e contornos elegantes. <br>
+                            <strong>Material:</strong> Madeira de alta qualidade, com acabamento polido e textura suave ao toque.                            <br>
+                            <strong>Alças:</strong> Alças metálicas douradas, com design e acabamento impecável, fixadas nas laterais com suportes.<br>
+                            <strong>Tampa:</strong> Levemente inclinada, com moldura trabalhada em dourado e detalhes sutis, oferecendo um visual sofisticado.<br>
+                            <strong>Interior:</strong>  Revestido com tecido veludo de alta qualidade.<br>
                         </p>
                     </div>
 
                     <div class="price">
-                        <p>R$ 2050,00</p>
+                        <p>Valor parcelado ate 10x sem juros: <br></p>
+                        <p class="valor">R$ 2050,00</p>
+                        <p class="desconto"></p>
                     </div>
 
                     <button class="cart-button">
@@ -318,16 +337,18 @@
 
                     <div class="description">
                         <p>
-                            <strong>Formato:</strong> Retangular com uma leve afunilação nas extremidades superiores e inferiores. <br>
-                            <strong>Material:</strong> Madeira em tom marrom escuro com textura amadeirada, bem polida e envernizada para realçar o acabamento. <br>
-                            <strong>Alças:</strong> Feitas de madeira com detalhes metálicos para reforço ou fixação, projetadas para funcionalidade e estética simples.br <br>
-                            <strong>Tampa:</strong> Também em madeira marrom escura, envernizada, com encaixe simples e acabamento discreto. <br>
-                            <strong>Interior:</strong> Pode ser forrado com tecido branco ou bege, em algodão ou poliéster, sem ornamentos sofisticados. <br>
+                            <strong>Formato:</strong>  Retangular, com bordas suaves e um design refinado. <br>
+                            <strong>Material:</strong> Madeira de excelente qualidade, com acabamento lustroso e textura polida. <br>
+                            <strong>Alças:</strong> Alças metálicas douradas, com um estilo clássico e acabamento polido, firmemente fixadas nas laterais do caixão. <br>
+                            <strong>Tampa:</strong>  Levemente inclinada, adornada com finos detalhes dourados.<br>
+                            <strong>Interior:</strong> Alças metálicas douradas, com um estilo clássico e acabamento polido, firmemente fixadas nas laterais do caixão.<br>
                         </p>
                     </div>
 
                     <div class="price">
-                        <p>R$ 3568,70</p>
+                        <p>Valor parcelado ate 10x sem juros: <br></p>
+                        <p class="valor">R$ 3568,70</p>
+                        <p class="desconto"></p>
                     </div>
 
                     <button class="cart-button">
@@ -346,16 +367,18 @@
 
                     <div class="description">
                         <p>
-                            <strong>Formato:</strong> Retangular com uma leve afunilação nas extremidades superiores e inferiores. <br>
-                            <strong>Material:</strong> Madeira em tom marrom escuro com textura amadeirada, bem polida e envernizada para realçar o acabamento. <br>
-                            <strong>Alças:</strong> Feitas de madeira com detalhes metálicos para reforço ou fixação, projetadas para funcionalidade e estética simples.br <br>
-                            <strong>Tampa:</strong> Também em madeira marrom escura, envernizada, com encaixe simples e acabamento discreto. <br>
-                            <strong>Interior:</strong> Pode ser forrado com tecido branco ou bege, em algodão ou poliéster, sem ornamentos sofisticados. <br>
+                            <strong>Formato:</strong> Retangular, com linhas suaves e contornos elegantes.<br>
+                            <strong>Material:</strong> Madeira de alta qualidade, com acabamento polido na cor prata e textura suave ao toque. <br>
+                            <strong>Alças:</strong> Alças metálicas douradas, com design esculpido e acabamento impecável, fixadas nas laterais com suportes robustos.<br>
+                            <strong>Tampa:</strong> Levemente inclinada, com moldura trabalhada em dourado e detalhes sutis, oferecendo um visual sofisticado. <br>
+                            <strong>Interior:</strong> Revestido com tecido de cetim. Inclui um travesseiro forrado com o mesmo tecido, garantindo conforto e elegância. <br>
                         </p>
                     </div>
 
                     <div class="price">
-                        <p>R$ 6599,90</p>
+                        <p>Valor parcelado ate 10x sem juros: <br></p>
+                        <p class="valor">R$ 6599,90</p>
+                        <p class="desconto"></p>
                     </div>
 
                     <button class="cart-button">
@@ -374,16 +397,18 @@
 
                     <div class="description">
                         <p>
-                            <strong>Formato:</strong> Retangular com uma leve afunilação nas extremidades superiores e inferiores. <br>
-                            <strong>Material:</strong> Madeira em tom marrom escuro com textura amadeirada, bem polida e envernizada para realçar o acabamento. <br>
-                            <strong>Alças:</strong> Feitas de madeira com detalhes metálicos para reforço ou fixação, projetadas para funcionalidade e estética simples.br <br>
-                            <strong>Tampa:</strong> Também em madeira marrom escura, envernizada, com encaixe simples e acabamento discreto. <br>
-                            <strong>Interior:</strong> Pode ser forrado com tecido branco ou bege, em algodão ou poliéster, sem ornamentos sofisticados. <br>
+                            <strong>Formato:</strong> Retangular, com contornos suaves. <br>
+                            <strong>Material:</strong> Estrutura de madeira de alta qualidade, revestida com acabamento dourado brilhante, proporcionando um toque de sofisticação e brilho luxuoso. <br>
+                            <strong>Alças:</strong> Alças metálicas douradas com um design moderno e elegante, perfeitamente integradas à estrutura do caixão para um transporte seguro.<br>
+                            <strong>Tampa:</strong> Plana, com um leve acabamento dourado nas bordas, destacando o revestimento e conferindo um visual elegante. <br>
+                            <strong>Interior:</strong> orro em tecido de veludo de alta gama, na cor azul profundo, criando um contraste elegante com o revestimento dourado. Inclui um travesseiro forrado com o mesmo veludo azul, dando um toque de luxo e suavidade.<br>
                         </p>
                     </div>
 
                     <div class="price">
-                        <p>R$ 9999,90</p>
+                        <p>Valor parcelado ate 10x sem juros: <br></p>
+                        <p class="valor">R$ 9999,90</p>
+                        <p class="desconto"></p>
                     </div>
 
                     <button class="cart-button">
@@ -402,16 +427,18 @@
 
                     <div class="description">
                         <p>
-                            <strong>Formato:</strong> Retangular com uma leve afunilação nas extremidades superiores e inferiores. <br>
-                            <strong>Material:</strong> Madeira em tom marrom escuro com textura amadeirada, bem polida e envernizada para realçar o acabamento. <br>
-                            <strong>Alças:</strong> Feitas de madeira com detalhes metálicos para reforço ou fixação, projetadas para funcionalidade e estética simples.br <br>
-                            <strong>Tampa:</strong> Também em madeira marrom escura, envernizada, com encaixe simples e acabamento discreto. <br>
-                            <strong>Interior:</strong> Pode ser forrado com tecido branco ou bege, em algodão ou poliéster, sem ornamentos sofisticados. <br>
+                            <strong>Formato:</strong> Retangular, com linhas suaves. <br>
+                            <strong>Material:</strong> Estrutura em madeira de alta qualidade, revestida com acabamento laranja profundo, criando um visual mais elegante.<br>
+                            <strong>Alças:</strong> Alças metálicas douradas, com acabamento polido, integradas discretamente às laterais do caixão.<br>
+                            <strong>Tampa:</strong> Plana, com bordas delicadamente trabalhadas e o acabamento laranja destacado, oferecendo um design moderno e atraente.<br>
+                            <strong>Interior:</strong> Forro luxuoso de veludo ou cetim na cor branca. Inclui um travesseiro forrado com o mesmo tecido, garantindo um toque suave e elegante.<br>
                         </p>
                     </div>
 
                     <div class="price">
-                        <p>R$ 5699,00</p>
+                        <p>Valor parcelado ate 10x sem juros: <br></p>
+                        <p class="valor">R$ 5699,00</p>
+                        <p class="desconto"></p>
                     </div>
 
                     <button class="cart-button">
@@ -430,16 +457,18 @@
 
                     <div class="description">
                         <p>
-                            <strong>Formato:</strong> Retangular com uma leve afunilação nas extremidades superiores e inferiores. <br>
-                            <strong>Material:</strong> Madeira em tom marrom escuro com textura amadeirada, bem polida e envernizada para realçar o acabamento. <br>
-                            <strong>Alças:</strong> Feitas de madeira com detalhes metálicos para reforço ou fixação, projetadas para funcionalidade e estética simples.br <br>
-                            <strong>Tampa:</strong> Também em madeira marrom escura, envernizada, com encaixe simples e acabamento discreto. <br>
-                            <strong>Interior:</strong> Pode ser forrado com tecido branco ou bege, em algodão ou poliéster, sem ornamentos sofisticados. <br>
+                            <strong>Formato:</strong> Retangular, com linhas elegantes e um design que exala sofisticação. <br>
+                            <strong>Material:</strong> Estrutura de madeira de alta qualidade, revestida com acabamento roxo profundo, que confere um visual único e imponente, ao mesmo tempo moderno e refinado.<br>
+                            <strong>Alças:</strong> Alças metálicas prateadas, com acabamento polido e design clássico, perfeitamente integradas às laterais para garantir um transporte seguro e estiloso.<br>
+                            <strong>Tampa:</strong> Plana, com bordas suaves e detalhes discretos que destacam o tom vibrante do roxo, criando uma estética luxuosa e distinta.<br>
+                            <strong>Interior:</strong> orro de veludo ou cetim branco, proporcionando um contraste elegante com o exterior roxo. O interior é generosamente acolchoado, oferecendo conforto, e inclui um travesseiro forrado com o mesmo tecido branco, criando um toque de suavidade e requinte. <br>
                         </p>
                     </div>
 
                     <div class="price">
-                        <p>R$ 8958,90</p>
+                        <p>Valor parcelado ate 10x sem juros: <br></p>
+                        <p class="valor">R$ 8958,90</p>
+                        <p class="desconto"></p>
                     </div>
 
                     <button class="cart-button">
