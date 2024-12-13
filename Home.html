@@ -586,10 +586,13 @@
         <div class="texto-mensagem">
             <h1>Cadastre seu email para receber promoções e atualizações!!</h1>
         </div>
-        <div class="mensagem-texto">
-            <input type="email" name="email" id="email" placeholder="Digite seu email">
-            <button class="enviar">Enviar</button>
-        </div>
+        <form action="./php/register.php" method="post">
+            <div class="mensagem-texto">
+                <input type="email" name="email" id="email" placeholder="Digite seu email">
+                <button type="submit" class="enviar">Enviar</button>
+            </div>
+        </form>
+
     </div>
 
     <div class="pag4">
@@ -1498,6 +1501,9 @@
 
         </div>
 
+    </div>
+    <div class="carrinho">
+        <a href="#"><img src="./imagens/shopping-cart_3737151.png" alt=""></a>
     </div>
     <script src="./js/pag3.js"></script>
 </body>

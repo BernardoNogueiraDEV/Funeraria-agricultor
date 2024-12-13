@@ -790,3 +790,39 @@ input[type="radio"] {
   justify-content: center;
   position: absolute;
 }
+.carrinho{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  right: 40px;
+  bottom: 50px;
+  position: fixed;
+  background-color: transparent;
+  z-index: 11;
+  justify-content: center;
+  align-items: center;
+}
+.carrinho a{
+  align-items: center;
+  left: 50%;
+  position: relative;
+  transform: translate(-50%);
+  top: 17%;
+  background-size: cover;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  z-index: 11;
+}
+.carrinho a img{
+  width: 50px;
+  z-index: 11;
+  height: 50px;
+  background-size: cover;
+}
+.carrinho:hover , .carrinho a img:hover{
+  transform: scale(1.1);
+}
