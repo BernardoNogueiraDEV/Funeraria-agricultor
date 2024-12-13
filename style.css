@@ -29,6 +29,7 @@ header{
     position: relative;
     margin-top: -15vh;
     margin-left: -5vh;
+
 }
 body{
     margin: 0;
@@ -339,7 +340,7 @@ html{
     margin: 0;
     
     font-size: 5.5em;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   .cart-button {
@@ -352,9 +353,8 @@ html{
     bottom: 10px; /* Mantém o espaçamento de 10px */
     position: relative; /* Certifique-se de que a posição está definida */
     padding: 2rem;
-    width: 100%;
+    width: 70%;
     background-color: rgb(59, 172, 247);
-    
     font-size: 2rem;
     font-weight: 500;
     color: black;
@@ -366,6 +366,10 @@ html{
 }
   .cart-button:hover{
     background-color: rgb(59, 172, 247, 0.8);
+  }
+  .comprar{
+    display: flex;
+    flex-basis: 200;
   }
   .description{
     color: black;
@@ -429,15 +433,23 @@ button.prev:hover, button.next:hover {
 #pesquisa{
   width: 200px;
   height: 30px;
-  border-radius: 2rem;
+  border-radius: 1rem;
+  outline: none;
 }
 .pesquisaButao{
   height: 30px;
   border-radius: 2rem;
+  outline: none;
+  cursor: pointer;
+}
+.pesquisaButao:hover{
+  background-color: rgb(224, 219, 219);
 }
 .pag4{
-  top: 370%;
-  height: 100vh;
+  top: 390%;
+  background-image: url(./imagens/27844418-velorio-branco-rosas-em-sombrio-fundo-com-copia-de-espaco-gratis-foto.jpg);
+  background-size: cover;
+  height: 115vh;
   width: 100%;
   position: absolute;
   align-items: center;
@@ -447,10 +459,12 @@ button.prev:hover, button.next:hover {
 }
 .pag4 h1{
   margin: 0;
+  color: white;
   font-size: 5.5em;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .card-flores{
+  box-shadow: black -3px -3px 8px 10px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -458,7 +472,7 @@ button.prev:hover, button.next:hover {
   left: 50%;
   transform: translate(-50%);
   width: 600px;
-  height: 80vh;
+  height: 90vh;
   background-color: white;
   border-radius: 1rem;
 }
@@ -476,6 +490,7 @@ button.prev:hover, button.next:hover {
 }
 
 .radio{
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -496,11 +511,11 @@ button.prev:hover, button.next:hover {
   font-size: 3em;
 }
 input[type="radio"] {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
 }
 .radio button{
-  top: 90%;
+  top: 105%;
   position: absolute;
 }
 .pesquisarCoroa{
@@ -512,8 +527,266 @@ input[type="radio"] {
   border-radius: 1rem;
   padding: 5px;
   font-size: 1.2em;
+  color: white;
   background-color: gray;
 }
 .pesquisarCoroa:hover{
   background-color: rgb(194, 189, 189);
+}
+.mensagem{
+  width: 100%;
+  height: 20vh;
+  background-color: black;
+  z-index: 5;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+.mensagem-texto{
+  width: 100%;
+  height: 15vh;
+  margin-top: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.mensagem-texto input{
+  width: 500px;
+  height: 50px;
+  outline: none;
+  font-size: 1.2em;
+  border-radius: 1rem;
+  padding-left: 10px;
+  z-index: 10;
+}
+.mensagem-texto button{
+  margin-left: 5px;
+  width: 100px;
+  height: 50px;
+  font-size: 1.5em;
+  z-index: 5;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+.mensagem-texto button:hover{
+  background-color: rgb(223, 218, 218);
+}
+.texto-mensagem{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.card-flores-tradicional{
+  width: 100%;
+  height: 120vh;
+  justify-content: center;
+  top: 520%;
+  position: absolute;
+
+}
+.escolher_flor{
+  font-size: 3em !important;
+  margin-top: 10px;
+}
+.card-tradicional{
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 112vh;
+  border-radius: 1rem;
+  background-color: white;
+  margin: 50px;
+  padding: 10px;
+  border: solid black 2px;
+  box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.8);
+}
+.carouselflores{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.image_containerFlores{
+  width: 100%;
+  height: 35vh;
+}
+.image_containerFlores img{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+.title-coroas{
+  font-size: 3.5em;
+  text-align: center;
+}
+.price-tradicional{
+  font-size: 2em;
+}
+.card-flores-minimalista{
+  width: 100%;
+  height: 120vh;
+  justify-content: center;
+  top: 520%;
+  position: absolute;
+}
+.card-flores-religiosa{
+  width: 100%;
+  height: 120vh;
+  justify-content: center;
+  top: 520%;
+  position: absolute;
+}
+/* From Uiverse.io by vinodjangid07 */ 
+.cartBtn {
+  width: 185px;
+  height: 105px;
+  border: none;
+  margin-left: 5px;
+  border-radius: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 10px;
+  border-radius: 0.5rem;
+  gap: 7px;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  background-color: rgb(29, 29, 29);
+  box-shadow: 0 20px 30px -7px rgba(27, 27, 27, 0.219);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.cart {
+  z-index: 2;
+}
+
+.cartBtn:active {
+  transform: scale(0.96);
+}
+
+.product {
+  position: absolute;
+  width: 12px;
+  border-radius: 3px;
+  content: "";
+  left: 23px;
+  bottom: 23px;
+  opacity: 0;
+  z-index: 1;
+  fill: rgb(211, 211, 211);
+}
+
+.cartBtn:hover .product {
+  animation: slide-in-top 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-30px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0) rotate(-90deg);
+    opacity: 1;
+  }
+}
+
+.cartBtn:hover .cart {
+  animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.card-flores-Exclusiva-em-branco{
+    width: 100%;
+    height: 120vh;
+  justify-content: center;
+    top: 520%;
+    position: absolute; 
+}
+.card-flores-colorida{
+    width: 100%;
+    height: 120vh;
+    top: 520%;
+    justify-content: center;
+    position: absolute; 
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  z-index: 5;
+  right: 10px;
+  background-color: white;
+  border: solid black 2px;
+  border-radius: 50%;
+  padding: 5px;
+  width: 80px;
+  font-size: 50px;
+  cursor: pointer;
+  color: #000;
+}
+
+.close-button:hover {
+  color: red;
+}
+.card-flores-tradicional, .card-flores-minimalista,
+.card-flores-religiosa, .card-flores-Exclusiva-em-branco,
+.card-flores-colorida, .card-ramalhete-tradicional, .card-ramalhete-minimalista,
+.card-ramalhete-religiosa, .card-ramalhete-em-branco, .card-ramalhete-colorido{
+  background-image: url(./imagens/beautiful-flowers-wooden-background.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 130vh;
+  top: 505%;
+}
+.card-ramalhete-tradicional{
+  width: 100%;
+  height: 130vh;
+  top: 505%;
+  justify-content: center;
+  position: absolute; 
+}
+.card-ramalhete-minimalista{
+  width: 100%;
+  height: 130vh;
+  top: 505%;
+  justify-content: center;
+  position: absolute;
+}
+.card-ramalhete-religiosa{
+  width: 100%;
+  height: 130vh;
+  top: 505%;
+  justify-content: center;
+  position: absolute;
+}
+.card-ramalhete-em-branco{
+  width: 100%;
+  height: 130vh;
+  top: 505%;
+  justify-content: center;
+  position: absolute;
+}
+.card-ramalhete-colorido{
+  width: 100%;
+  height: 130vh;
+  top: 505%;
+  justify-content: center;
+  position: absolute;
 }

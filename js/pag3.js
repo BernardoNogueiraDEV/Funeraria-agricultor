@@ -44,7 +44,7 @@ updateVisibility();
 const valores = document.getElementsByClassName('valor');
 const desconto = document.getElementsByClassName('desconto');
 
-for (let i = 0; i < 12; i++){
+for (let i = 0; i < valores.length; i++){
     const valorNumerico = parseFloat(valores[i].innerText.replace('R$ ', '').replace(',', '.'));
     desconto[i].innerHTML = `Valor a vista com 30% de desconto R$ ${(valorNumerico - (valorNumerico * 0.30)).toFixed(2)}`;
 }
@@ -65,3 +65,63 @@ menu.addEventListener('click', () => {
        
     }
 });
+function atualizarExibicao() {
+    // Obtém os valores selecionados
+    const tipoFlor = document.querySelector('input[name="tipo_flor"]:checked')?.value;
+    const tipoCoroa = document.querySelector('input[name="tipo_coroa"]:checked')?.value;
+
+    const tradicional = document.getElementsByClassName('card-flores-tradicional')[0];
+    const minimalista = document.getElementsByClassName('card-flores-minimalista')[0];
+    const religiosa = document.getElementsByClassName('card-flores-religiosa')[0];
+    const branca = document.getElementsByClassName('card-flores-Exclusiva-em-branco')[0];
+    const colorida = document.getElementsByClassName('card-flores-colorida')[0];
+
+    const rtradicional = document.getElementsByClassName('card-ramalhete-tradicional')[0];
+    const rmminimalista = document.getElementsByClassName('card-ramalhete-minimalista')[0];
+    const rreligiosa = document.getElementsByClassName('card-ramalhete-religiosa')[0];
+    const rbranca = document.getElementsByClassName('card-ramalhete-em-branco')[0];
+    const rcolorida = document.getElementsByClassName('card-ramalhete-colorido')[0];
+
+    // Inicializa todos os elementos como não visíveis
+    const elementos = [tradicional, minimalista, religiosa, branca, colorida, rtradicional, rmminimalista, rreligiosa, rbranca, rcolorida];
+    elementos.forEach(elemento => {
+        if (elemento) {
+            elemento.style.display = 'none';
+        }
+    });
+
+    // Lógica para exibir os elementos corretos
+    if (tipoFlor === 'coroa' && tipoCoroa === 'tradicional') {
+        tradicional.style.display = 'flex';
+        document.location.href = '#card-tradicional';
+    } else if (tipoFlor === 'coroa' && tipoCoroa === 'minimalista') {
+        minimalista.style.display = 'flex';
+        document.location.href = '#card-minimalista';
+    } else if (tipoFlor === 'coroa' && tipoCoroa === 'religiosa') {
+        religiosa.style.display = 'flex';
+        document.location.href = '#card-religiosa';
+    } else if (tipoFlor === 'coroa' && tipoCoroa === 'branca') {
+        branca.style.display = 'flex';
+        document.location.href = '#card-branca';
+    } else if (tipoFlor === 'coroa' && tipoCoroa === 'colorida') {
+        colorida.style.display = 'flex';
+        document.location.href = '#card-colorida';
+    }
+
+    if (tipoFlor === 'ramalhete' && tipoCoroa === 'tradicional'){
+        rtradicional.style.display = 'flex';
+        document.location.href = '#ramalhete-tradicional';
+    } else if (tipoFlor === 'ramalhete' && tipoCoroa === 'minimalista'){
+        rmminimalista.style.display = 'flex';
+        document.location.href = '#ramalhete-minimalista';
+    } else if (tipoFlor === 'ramalhete' && tipoCoroa === 'religiosa'){
+        rreligiosa.style.display = 'flex';
+        document.location.href = '#ramalhete-religiosa';
+    } else if (tipoFlor === 'ramalhete' && tipoCoroa === 'branca'){
+        rbranca.style.display = 'flex';
+        document.location.href = '#ramalhete-branco';
+    } else if (tipoFlor === 'ramalhete' && tipoCoroa === 'colorida'){
+        rcolorida.style.display = 'flex';
+        document.location.href = '#ramalhete-colorido';
+    }
+}
