@@ -800,6 +800,8 @@ input[type="radio"] {
   background-color: transparent;
   z-index: 11;
   justify-content: center;
+  filter: drop-shadow(0 0 1rem black);
+  box-shadow: 1px 1px 1rem black;
   align-items: center;
 }
 .carrinho a{

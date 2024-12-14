@@ -125,3 +125,12 @@ function atualizarExibicao() {
         document.location.href = '#ramalhete-colorido';
     }
 }
+
+function comprar(button) {
+    // Obtém o nome e o valor do produto a partir dos atributos data
+    var nomeProduto = button.getAttribute('data-nome');
+    var valorProduto = button.getAttribute('data-valor');
+
+    // Redireciona para a página de compra com os parâmetros
+    window.location.href = './compra.html?nome=' + encodeURIComponent(nomeProduto) + '&valor=' + encodeURIComponent(valorProduto);
+}

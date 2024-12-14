@@ -1,6 +1,7 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+include '../php/conexao.php';
 
 require '../vendor/autoload.php'; // Inclua o autoload do Composer
 
