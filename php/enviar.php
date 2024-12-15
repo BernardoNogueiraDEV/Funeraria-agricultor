@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $card_cvv = $_POST['card_cvv'] ?? null;
 
     // Pegando o valor total da URL (enviado pelo formulário ou query string)
-    $valor_total = $_POST['valor_total'] ?? 0; // Certifique-se de enviar o valor do formulário
+    $valor_total = $_POST['total'] ?? 0; // Certifique-se de enviar o valor do formulário
     $valor_total = floatval($valor_total); // Converte para número decimal
 
     // Registrando a data atual

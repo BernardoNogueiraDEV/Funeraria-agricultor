@@ -199,64 +199,57 @@
         }
 
 
-        function updateSummary(method, nome, valor) {
-            const summary = document.querySelector('.summary-card');
-            summary.innerHTML = `
-                <h3>Resumo do Pedido</h3>
-                <p>Itens: ${nome}</p>
-                <p>Frete: R$ 0,00</p>
-                <p>Método: ${method}</p>
-                <p class="summary-total">Total: R$ ${valor}</p>
-            `;
-        }
-        document.addEventListener('DOMContentLoaded', () => {
-            const nomeProduto = new URLSearchParams(window.location.search).get('nome');
-            const valorProduto = new URLSearchParams(window.location.search).get('valor');
-
-            document.querySelectorAll('input[name="payment"]').forEach(option => {
-                option.addEventListener('change', (e) => {
-                    updateSummary(e.target.labels[0].innerText, nomeProduto, valorProduto);
-                });
-            });
-        });
-        function getQueryParams() {
+        document.addEventListener('DOMContentLoaded', function() {
+            // Captura os parâmetros da URL
             const params = new URLSearchParams(window.location.search);
             const nome = params.get('nome');
-            const valor = params.get('valor');
+            const preco = params.get('valor');
+            const total = params.get('total');
 
-            // Atualiza o conteúdo do summary-card
-            updateSummary('Selecionar método de pagamento', nome, valor);
-        }
+            // Atualiza os elementos na página com os valores recuperados
+            document.getElementById('item_nome_display').innerText = nome;
+            document.getElementById('item_preco_display').innerText = preco;
+            document.getElementById('total_display').innerText = total;
 
-        // Chama a função ao carregar a página
-        window.onload = getQueryParams;
-        
+            // Função para atualizar o resumo com o método de pagamento selecionado
+            function updateSummary() {
+                const selectedMethod = document.querySelector('input[name="payment"]:checked');
+                const method = selectedMethod ? selectedMethod.value : 'Nenhum método selecionado';
+                const summary = document.querySelector('.summary-card');
 
-        function getQueryParams() {
-    const params = new URLSearchParams(window.location.search);
-    const nome = params.get('nome');
-    const valor = params.get('valor');
+                if (summary) {
+                    summary.innerHTML = `
+                        <h3>Resumo do Pedido</h3>
+                        <p>Itens: ${nome}</p>
+                        <p>Frete: R$ 0,00</p>
+                        <p>Método: ${method}</p>
+                        <p class="summary-total">Total: R$ ${total}</p>
+                    `;
+                } else {
+                    console.error("Elemento '.summary-card' não encontrado no DOM.");
+                }
+            }
 
-    // Atualiza o conteúdo do summary-card
-    const summaryCard = document.querySelector('.summary-card');
-    summaryCard.innerHTML = `
-        <h3>Resumo do Pedido</h3>
-        <p>Itens: ${nome}</p>
-        <p>Frete: R$ 0,00</p>
-        <p class="summary-total">Total: R$ ${valor}</p>
-    `;
+            // Adiciona o evento para capturar a seleção do método de pagamento
+            const paymentOptions = document.querySelectorAll('input[name="payment"]');
+            paymentOptions.forEach(option => {
+                option.addEventListener('change', updateSummary);
+            });
 
-    // Atualiza o valor total no campo oculto
-    const valorTotalInput = document.getElementById('valor_total');
-    if (valorTotalInput) {
-        valorTotalInput.value = valor; // Atualiza o campo hidden com o valor
-    }
-}
+            // Chama a função para atualizar o resumo assim que a página carregar
+            updateSummary();
 
+            // Adiciona o valor 'total' como o 'name' de um campo oculto em um formulário
+            const form = document.querySelector('form'); // Selecione o formulário onde você quer adicionar o campo
+            if (form) {
+                const hiddenInput = document.createElement('input');
+                hiddenInput.type = 'hidden';
+                hiddenInput.name = 'total'; // Nome fixo para o campo, por exemplo, 'total'
+                hiddenInput.value = total; // Atribuindo o valor de 'total' ao campo
+                form.appendChild(hiddenInput); // Adiciona o campo oculto no formulário
+            }
 
-        // Chama a função ao carregar a página
-        window.onload = getQueryParams;
-
+        });
 
         function validateDebitCard() {
             const cardNumber = document.getElementById('debit-card-number');
@@ -308,8 +301,6 @@
             toggleCardFields();
         });
 
-
-
     </script>
 </head>
 <body>
@@ -317,69 +308,79 @@
         <div class="main-content">
 
             <form id="purchase-form" method="POST" action="./php/enviar.php">
-                <div class="section">
-                    <div class="section-title">Endereço de Entrega</div>
-                    <div class="input-field">
-                        <input type="text" id="nome-cliente" name="nome_cliente" placeholder="Nome" required>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" id="rua" name="rua" placeholder="Rua" required>
-                        <input type="text" id="numero" name="numero" placeholder="Número" required>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
-                        <input type="text" id="estado" name="estado" placeholder="Estado" required>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" id="cep" name="cep" placeholder="CEP" required>
-                    </div>
-                </div>
-            
-                <div class="section">
-                    <div class="section-title">Método de Pagamento</div>
-                    <div class="payment-option">
-                        <input type="radio" id="cartao" name="payment" value="cartao_credito" required>
-                        <label for="cartao">Cartão de Crédito</label>
+                
+                    <div class="section">
+                        <div class="section-title">Endereço de Entrega</div>
                         <div class="input-field">
-                            <input type="text" id="card-number" name="card_number" placeholder="Número do cartão" maxlength="19" oninput="validateCard()" required>
-                            <input type="text" id="card-validity" name="card_validity" placeholder="Validade (MM/AA)" maxlength="5" oninput="formatValidity()" required>
-                            <input type="text" id="card-cvv" name="card_cvv" placeholder="CVV" maxlength="3" oninput="validateCVV()" required>
+                            <input type="text" id="nome-cliente" name="nome_cliente" placeholder="Nome" required>
                         </div>
-                        <div class="card-brand" id="card-brand"></div>
-                    </div>
-            
-                    <div class="payment-option">
-                        <input type="radio" id="debito" name="payment" value="cartao_debito" required>
-                        <label for="debito">Cartão de Débito</label>
                         <div class="input-field">
-                            <input type="text" id="debit-card-number" name="card_number" placeholder="Número do cartão" maxlength="19" oninput="validateDebitCard()" required>
-                            <input type="text" id="debit-card-validity" name="card_validity" placeholder="Validade (MM/AA)" maxlength="5" oninput="formatValidity()" required>
-                            <input type="text" id="debit-card-cvv" name="card_cvv" placeholder="CVV" maxlength="3" oninput="validateCVV()" required>
+                            <input type="text" id="rua" name="rua" placeholder="Rua" required>
+                            <input type="text" id="numero" name="numero" placeholder="Número" required>
                         </div>
-                        <div class="card-brand" id="debit-card-brand"></div>
+                        <div class="input-field">
+                            <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
+                            <input type="text" id="estado" name="estado" placeholder="Estado" required>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="cep" name="cep" placeholder="CEP" required>
+                        </div>
                     </div>
-            
-                    <div class="payment-option">
-                        <input type="radio" id="pix" name="payment" value="pix" required>
-                        <label for="pix">Pix</label>
-                        <p>O código Pix será gerado após a confirmação do pedido.</p>
+                
+                    <div class="section">
+                        <div class="section-title">Método de Pagamento</div>
+                        <div class="payment-option">
+                            <input type="radio" id="cartao" name="payment" value="cartao_credito" required>
+                            <label for="cartao">Cartão de Crédito</label>
+                            <div class="input-field">
+                                <input type="text" id="card-number" name="card_number" placeholder="Número do cartão" maxlength="19" oninput="validateCard()">
+                                <input type="text" id="card-validity" name="card_validity" placeholder="Validade (MM/AA)" maxlength="5" oninput="formatValidity()">
+                                <input type="text" id="card-cvv" name="card_cvv" placeholder="CVV" maxlength="3" oninput="validateCVV()">
+                            </div>
+                            <div class="card-brand" id="card-brand"></div>
+                        </div>
+                
+                        <div class="payment-option">
+                            <input type="radio" id="debito" name="payment" value="cartao_debito" required>
+                            <label for="debito">Cartão de Débito</label>
+                            <div class="input-field">
+                                <input type="text" id="debit-card-number" name="debit_card_number" placeholder="Número do cartão" maxlength="19" oninput="validateDebitCard()">
+                                <input type="text" id="debit-card-validity" name="debit_card_validity" placeholder="Validade (MM/AA)" maxlength="5" oninput="formatValidity()">
+                                <input type="text" id="debit-card-cvv" name="debit_card_cvv" placeholder="CVV" maxlength="3" oninput="validateCVV()">
+                            </div>
+                            <div class="card-brand" id="debit-card-brand"></div>
+                        </div>
+                
+                        <div class="payment-option">
+                            <input type="radio" id="pix" name="payment" value="pix" required>
+                            <label for="pix">Pix</label>
+                            <p>O código Pix será gerado após a confirmação do pedido.</p>
+                        </div>
+                
+                        <div class="payment-option">
+                            <input type="radio" id="boleto" name="payment" value="boleto" required>
+                            <label for="boleto">Boleto</label>
+                            <p>O boleto será gerado após a confirmação do pedido.</p>
+                        </div>
+                
+                        <div class="button-container">
+                            <button type="submit" class="confirm-button">Confirmar Compra</button>
+                        </div>
                     </div>
-            
-                    <div class="payment-option">
-                        <input type="radio" id="boleto" name="payment" value="boleto" required>
-                        <label for="boleto">Boleto</label>
-                        <p>O boleto será gerado após a confirmação do pedido.</p>
-                    </div>
-            
-                    <div class="button-container">
-                        <button type="submit" class="confirm-button">Confirmar Compra</button>
-                    </div>
-                </div>
-
+                
+                
                 <div class="summary-card">
+                    <h3>Resumo do Pedido</h3>
+                    <p>Itens: <span id="item_nome_display"></span></p>
+                    <p>Preço: <span id="item_preco_display"></span></p>
+                    <p>Frete: R$ 0,00</p>
+                    <p>Método: <span id="payment_method_display"></span></p>
+                    <p class="summary-total">Total: R$ <span id="total_display"></span></p>
+                </div>
+            
                 
             </form>
             

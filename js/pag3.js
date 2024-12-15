@@ -127,10 +127,117 @@ function atualizarExibicao() {
 }
 
 function comprar(button) {
+    
     // Obtém o nome e o valor do produto a partir dos atributos data
     var nomeProduto = button.getAttribute('data-nome');
     var valorProduto = button.getAttribute('data-valor');
 
     // Redireciona para a página de compra com os parâmetros
     window.location.href = './compra.html?nome=' + encodeURIComponent(nomeProduto) + '&valor=' + encodeURIComponent(valorProduto);
+}
+let container = []; // Array para armazenar os itens no carrinho
+let subtotal = 0; // Total acumulado
+let itemCount = 0; // Contagem de itens no carrinho
+
+// Função para exibir o modal de sucesso
+function showSuccessModal() {
+    const modal = document.getElementById('success-modal');
+    modal.style.display = 'flex';
+
+    // Fecha o modal automaticamente após 2 segundos
+    setTimeout(() => {
+        closeModal();
+    }, 2000);
+}
+
+// Função para fechar o modal
+function closeModal() {
+    const modal = document.getElementById('success-modal');
+    modal.style.display = 'none';
+}
+function addToCart(button) {
+    // Recuperar o nome e o valor a partir dos atributos 'data-nome' e 'data-valor'
+    const nome = button.getAttribute('data-nome');
+    const valor = parseFloat(button.getAttribute('data-valor')); // Garantir que seja um número
+
+    // Verificar se nome e valor são válidos
+    if (!nome || isNaN(valor)) {
+        console.error('Nome ou valor inválidos');
+        return;
+    }
+
+    // Recupera o carrinho existente do localStorage ou inicializa um novo array
+    const carrinho = JSON.parse(localStorage.getItem('container')) || [];
+
+    // Adiciona o novo item ao carrinho
+    carrinho.push({ nome, valor });
+
+    // Salva o carrinho atualizado no localStorage
+    localStorage.setItem('container', JSON.stringify(carrinho));
+
+    // Exibe a mensagem de sucesso
+    const mensagem = document.createElement('div');
+    mensagem.innerText = "Item adicionado com sucesso!";
+    mensagem.style.position = "fixed";
+    mensagem.style.bottom = "20px";
+    mensagem.style.right = "20px";
+    mensagem.style.backgroundColor = "#4caf50";
+    mensagem.style.color = "white";
+    mensagem.style.padding = "10px";
+    mensagem.style.borderRadius = "5px";
+    mensagem.style.boxShadow = "0 2px 5px rgba(0,0,0,0.3)";
+    document.body.appendChild(mensagem);
+
+    // Remove a mensagem após 2 segundos
+    setTimeout(() => {
+        mensagem.remove();
+    }, 2000);
+}
+
+
+
+
+function updateCartDisplay() {
+    // Recupera o carrinho do localStorage
+    const carrinho = JSON.parse(localStorage.getItem('container')) || [];
+    const itensContainer = document.getElementById('itens-container');
+    const totalElement = document.getElementById('total');
+
+    // Verifica se os elementos existem na página
+    if (!itensContainer || !totalElement) {
+        console.error("Elementos do carrinho não encontrados na página.");
+        return;
+    }
+
+    // Limpa o conteúdo atual do carrinho na tela
+    itensContainer.innerHTML = '';
+
+    // Verifica se o carrinho está vazio
+    if (carrinho.length === 0) {
+        itensContainer.innerHTML = '<p>Seu carrinho está vazio!</p>';
+        totalElement.innerText = '';
+        return;
+    }
+
+    // Renderiza os itens do carrinho
+    let total = 0;
+    carrinho.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('item'); // Adiciona uma classe para o item
+
+        itemDiv.innerHTML = `
+            <div class="item-info">
+                <p>${item.nome}</p>
+                <p class="item-price">R$ ${item.valor.toFixed(2)}</p>
+            </div>
+        `;
+
+        itensContainer.appendChild(itemDiv);
+
+        // Atualiza o total
+        total += item.valor;
+    });
+
+    // Atualiza o total na página
+    totalElement.innerText = `Total: R$ ${total.toFixed(2)}`;
 }
