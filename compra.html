@@ -165,8 +165,8 @@
         function validateCard() {
             const cardNumber = document.getElementById('card-number');
             const cardBrand = document.getElementById('card-brand');
-            const visaRegex = /^4[0-9]{12}(?:[0-9]{3})?$/;
-            const masterRegex = /^5[1-5][0-9]{14}$/;
+            const visaRegex = /^4[0-9]{12}(?:[0-9]{3})/;
+            const masterRegex = /^5[1-5][0-9]{14}/;
             const eloRegex = /^(636368|438935|504175|451416|509048|509067|509049|509069|509050|509074|509068|509045|509051|509046|509066|509047|509042|509052|509043|509064|36297[8-9]|36299[0-9])/;
 
             // Format card number with spaces
@@ -175,11 +175,11 @@
             // Check card brand
             const cleanedNumber = cardNumber.value.replace(/\s/g, '');
             if (visaRegex.test(cleanedNumber)) {
-                cardBrand.innerHTML = '<img src="visa.png" alt="Visa">';
+                cardBrand.innerHTML = '<img src="./imagens/visa.png" alt="Visa">';
             } else if (masterRegex.test(cleanedNumber)) {
-                cardBrand.innerHTML = '<img src="mastercard.png" alt="Mastercard">';
+                cardBrand.innerHTML = '<img src="./imagens/mastercard.png" alt="Mastercard">';
             } else if (eloRegex.test(cleanedNumber)) {
-                cardBrand.innerHTML = '<img src="elo.png" alt="Elo">';
+                cardBrand.innerHTML = '<img src="./imagens/elo.png" alt="Elo">';
             } else {
                 cardBrand.innerHTML = 'Cartão inválido';
             }
@@ -255,7 +255,7 @@
             const cardNumber = document.getElementById('debit-card-number');
             const cardBrand = document.getElementById('debit-card-brand');
             const visaRegex = /^4[0-9]{12}(?:[0-9]{3})?$/; // Visa
-            const masterRegex = /^5[1-5][0-9]{14}$/; // Mastercard
+            const masterRegex = /^5[1-5][0-9]{14}/; // Mastercard
             const eloRegex = /^(636368|438935|504175|451416|509048|509067|509049|509069|509050|509074|509068|509045|509051|509046|509066|509047|509042|509052|509043|509064|36297[8-9]|36299[0-9])/; // Elo
 
             // Formata o número do cartão com espaços
@@ -264,11 +264,11 @@
             // Verifica a bandeira do cartão
             const cleanedNumber = cardNumber.value.replace(/\s/g, '');
             if (visaRegex.test(cleanedNumber)) {
-                cardBrand.innerHTML = '<img src="visa.png" alt="Visa">';
+                cardBrand.innerHTML = '<img src="./imagens/visa.png" alt="Visa">';
             } else if (masterRegex.test(cleanedNumber)) {
-                cardBrand.innerHTML = '<img src="mastercard.png" alt="Mastercard">';
+                cardBrand.innerHTML = '<img src="./imagens/mastercard.png" alt="Mastercard">';
             } else if (eloRegex.test(cleanedNumber)) {
-                cardBrand.innerHTML = '<img src="elo.png" alt="Elo">';
+                cardBrand.innerHTML = '<img src="./imagens/elo.png" alt="Elo">';
             } else {
                 cardBrand.innerHTML = 'Cartão inválido';
             }
