@@ -1,1097 +1,1116 @@
 @font-face{
-    font-family: "Rosella";
-    src:url("./fontes/Rosella-Inline.ttf")
+  font-family: "Rosella";
+  src:url("./fontes/Rosella-Inline.ttf")
 }
 
 .titulo{
-    top: -40px;
-    font-family: "Rosella";
-    font-size: 6em !important;
+  top: -40px;
+  font-family: "Rosella";
+  font-size: 6em !important;
 }
 
 header{
-    position:fixed;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    top: 0;
-    width: 100%;
-    left: 0;
-    height: 80px;
-    backdrop-filter: blur(0);
-    z-index: 5;
+  position:fixed;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  top: 0;
+  width: 100%;
+  left: 0;
+  height: 80px;
+  backdrop-filter: blur(0);
+  z-index: 5;
 
 }
 
 .fundo{
-  transform: rotate(-3deg);
-    width: 150%;
-    height: 150vh;
-    z-index: -2;
-    position: relative;
-    margin-top: -15vh;
-    margin-left: -5vh;
+transform: rotate(-3deg);
+  width: 150%;
+  height: 150vh;
+  z-index: -2;
+  position: relative;
+  margin-top: -15vh;
+  margin-left: -5vh;
 
 }
 /* Header e Títulos */
 .titulo {
-  font-size: 4.5em !important; /* Reduz o tamanho do título */
-  top: -20px;
+font-size: 4.5em !important; /* Reduz o tamanho do título */
+top: -20px;
 }
 
 .inicio h1 {
-  font-size: 4em; /* Reduz tamanho do H1 */
+font-size: 4em; /* Reduz tamanho do H1 */
 }
 
 .inicio h2 {
-  font-size: 2em; /* Reduz tamanho do H2 */
-  top: -60px;
-  left: 0;
+font-size: 2em; /* Reduz tamanho do H2 */
+top: -60px;
+left: 0;
 }
 
 /* Botões */
 .botão_conhecer {
-  width: 50%; /* Reduz o tamanho */
-  font-size: 1.5em;
-  padding: 15px;
+width: 50%; /* Reduz o tamanho */
+font-size: 1.5em;
+padding: 15px;
 }
 
 /* Paginas */
 .pag2, .pag3 {
-  height: 100vh; /* Mantém altura proporcional */
+height: 100vh; /* Mantém altura proporcional */
 }
 
 .pag2 h1 {
-  font-size: 1.8em; /* Reduz tamanho do título */
+font-size: 1.8em; /* Reduz tamanho do título */
 }
 
 .pag2 p, .pag2 ul {
-  font-size: 0.9em; /* Reduz tamanho do texto */
+font-size: 0.9em; /* Reduz tamanho do texto */
 }
 
 .card {
-  width: 90%; /* Reduz a largura dos cards */
-  height: auto;
+width: 90%; /* Reduz a largura dos cards */
+height: auto;
 }
 
 .price {
-  font-size: 2.5em; /* Reduz o preço */
+font-size: 2.5em; /* Reduz o preço */
 }
 
 /* Breakpoints para ajustes adicionais */
 @media (max-width: 1200px) {
-  .titulo {
-      font-size: 3.5em !important;
-  }
-  .botão_conhecer {
-      width: 60%;
-      font-size: 1.3em;
-  }
-  .inicio h1 {
-      font-size: 3.5em;
-  }
-  .inicio h2 {
-      font-size: 1.6em;
-  }
+.titulo {
+    font-size: 3.5em !important;
+}
+.botão_conhecer {
+    width: 60%;
+    font-size: 1.3em;
+}
+.inicio h1 {
+    font-size: 3.5em;
+}
+.inicio h2 {
+    font-size: 1.6em;
+}
 }
 
 @media (max-width: 768px) {
-  .titulo {
-      font-size: 2.8em !important;
-  }
-  .inicio h1 {
-      font-size: 2.8em;
-  }
-  .inicio h2 {
-      font-size: 1.4em;
-      top: -30px;
-  }
-  .botão_conhecer {
-      width: 70%;
-      font-size: 1.1em;
-  }
+.titulo {
+    font-size: 2.8em !important;
+}
+.inicio h1 {
+    font-size: 2.8em;
+}
+.inicio h2 {
+    font-size: 1.4em;
+    top: -30px;
+}
+.botão_conhecer {
+    width: 70%;
+    font-size: 1.1em;
+}
 }
 
 @media (max-width: 480px) {
-  .titulo {
-      font-size: 2.2em !important;
-  }
-  .inicio h1 {
-      font-size: 2.2em;
-  }
-  .inicio h2 {
-      font-size: 1.2em;
-  }
-  .botão_conhecer {
-      width: 80%;
-      font-size: 1em;
-  }
+.titulo {
+    font-size: 2.2em !important;
+}
+.inicio h1 {
+    font-size: 2.2em;
+}
+.inicio h2 {
+    font-size: 1.2em;
+}
+.botão_conhecer {
+    width: 80%;
+    font-size: 1em;
+}
 }
 .escolhaEstilo{
-  font-size: 1.2em !important;
-  background-color: gray;
-  padding: 5px;
-  border-radius: 1rem;
-  z-index: 1;
-  width: 90%;
-  justify-content: center !important;
-  color: white;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  height: 50px;
-  left: 50%;
-  transform: translate(-50%);
-  position: relative;
+font-size: 1.2em !important;
+background-color: gray;
+padding: 5px;
+border-radius: 1rem;
+z-index: 1;
+width: 90%;
+justify-content: center !important;
+color: white;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+height: 50px;
+left: 50%;
+transform: translate(-50%);
+position: relative;
 }
 
 
 body{
-    margin: 0;
-    overflow-x: hidden;
+  margin: 0;
+  overflow-x: hidden;
 }
 html{
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .botão_conhecer{
-    position: relative;
-    z-index: 3;
-    left: 40%;
-    border-radius: 40px;
-    border-style: hidden;
-    background-color: white;
-    width: 45%;
-    cursor: pointer;
-    padding: 20px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 2em;
-    font-style: bold ;
-    font-weight: 400;
-    top: -80px;
+  position: relative;
+  z-index: 3;
+  left: 40%;
+  border-radius: 40px;
+  border-style: hidden;
+  background-color: white;
+  width: 45%;
+  cursor: pointer;
+  padding: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2em;
+  font-style: bold ;
+  font-weight: 400;
+  top: -80px;
 }
 
 .inicio{
-    position: absolute;
-    color: rgb(255, 255, 255);
-    left: 56%;
-    top: 7%;
-    display: flex;
-    flex-direction: column;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  left: 56%;
+  top: 7%;
+  display: flex;
+  flex-direction: column;
 
-    
+  
 }
 .inicio h1{
-    text-align: center;
-    left: -10%;
-    position: relative;
-    font-style: bold;
-    -webkit-text-stroke: 2px black;
-    font-weight: 400;
-    font-size: 6em;
+  text-align: center;
+  left: -10%;
+  position: relative;
+  font-style: bold;
+  -webkit-text-stroke: 2px black;
+  font-weight: 400;
+  font-size: 6em;
 }
 .inicio h2{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    position: relative;
-    top: -110px;
-    font-size: 2.6em;
-    left: -80px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+  top: -110px;
+  font-size: 2.6em;
+  left: -80px;
 }
 .pag1{
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-    
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  
 }
 .alinhar_rodape nav ul a{
-  text-decoration: none
+text-decoration: none
 }
 .alinhar_rodape nav ul a:hover{
-  text-decoration: underline;
+text-decoration: underline;
 }
 .botão_conhecer:hover{
-  background-color: #e3e6e3;
+background-color: #e3e6e3;
 }
 
 /* From Uiverse.io by JulanDeAlb */ 
 .hamburger {
-    cursor: pointer;
-  }
-  
-  .hamburger input {
-    display: none;
-  }
-  
-  .hamburger svg {
-    top: -6px;
-    position: relative;
-
-    /* The size of the SVG defines the overall size */
-    height: 6em;
-    /* Define the transition for transforming the SVG */
-    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .line {
-    fill: none;
-    stroke: white;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 3;
-    /* Define the transition for transforming the Stroke */
-    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .line-top-bottom {
-    stroke-dasharray: 12 63;
-  }
-  
-  .hamburger input:checked + svg {
-    transform: rotate(-45deg);
-  }
-  
-  .hamburger input:checked + svg .line-top-bottom {
-    stroke-dasharray: 20 300;
-    stroke-dashoffset: -32.42;
-  }
-  
-  .alinhar_rodape{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
-
-  }
-  nav{
-    z-index: 3;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    left: -500%;
-    position: relative;
-    transition: 1.5s;
-  }
-  a{
-    color: white;
-    cursor:pointer;
-    font-size: 25px;
- 
-  
-  }
-
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
-
-  .pag2 {
-      display: flex;
-      height: 120vh;
-      background-color: #413b57;
-      color: #eeebeb;
-      font-family: 'Open Sans', sans-serif;
-  }
-
-
-  .pag2 .img2 {
-      flex: 1;
-      height: 100%;
-      overflow: hidden;
-  }
-  
-  .pag2 .img2 img {
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-  }
-  
-  .pag2 .conteudo {
-      flex: 1;
-      padding: 50px 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-  }
-
-  .pag2 h1 {
-      color: #e3e6e3;
-      font-size: 2em;
-      margin-bottom: 20px;
-      font-weight: 700;
-  }
-  
-  .pag2 p, .pag2 ul {
-      font-size: 1em;
-      line-height: 1.6;
-      margin-bottom: 15px;
-      font-weight: 400;
-  }
-  
-  .pag2 ul {
-      list-style: disc;
-      margin-left: 20px;
-  }
-  
-  .pag2 ul li {
-      margin-bottom: 10px;
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-      .pag2 {
-          flex-direction: column;
-      }
-  
-      .pag2 .img2, .pag2 .conteudo {
-          width: 100%;
-          height: auto;
-      }
-  
-      .pag2 .img2 img {
-          height: auto;
-      }
-  
-      .pag2 h1 {
-          font-size: 1.8em;
-      }
-  
-      .pag2 p, .pag2 ul {
-          font-size: 0.9em;
-      }
-  }
-  
-  @media (max-width: 480px) {
-      .pag2 h1 {
-          font-size: 1.5em;
-      }
-  
-      .pag2 p, .pag2 ul {
-          font-size: 0.8em;
-      }
-  }
-
-.imagem2{
-    padding: 80px;
+  cursor: pointer;
 }
-.pag3{
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  top: -6px;
+  position: relative;
+
+  /* The size of the SVG defines the overall size */
+  height: 6em;
+  /* Define the transition for transforming the SVG */
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  /* Define the transition for transforming the Stroke */
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+.alinhar_rodape{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+
+}
+nav{
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  left: -500%;
+  position: relative;
+  transition: 1.5s;
+}
+a{
+  color: white;
+  cursor:pointer;
+  font-size: 25px;
+
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+.pag2 {
+    display: flex;
+    height: 120vh;
+    background-color: #413b57;
+    color: #eeebeb;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.pag2 .img2 {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+}
+
+.pag2 .img2 img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.pag2 .conteudo {
+    flex: 1;
+    padding: 50px 40px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 150vh;
+    justify-content: center;
+}
+
+.pag2 h1 {
+    color: #e3e6e3;
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.pag2 p, .pag2 ul {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.pag2 ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.pag2 ul li {
+    margin-bottom: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .pag2 {
+        flex-direction: column;
+    }
+
+    .pag2 .img2, .pag2 .conteudo {
+        width: 100%;
+        height: auto;
+    }
+
+    .pag2 .img2 img {
+        height: auto;
+    }
+
+    .pag2 h1 {
+        font-size: 1.8em;
+    }
+
+    .pag2 p, .pag2 ul {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .pag2 h1 {
+        font-size: 1.5em;
+    }
+
+    .pag2 p, .pag2 ul {
+        font-size: 0.8em;
+    }
+}
+
+.imagem2{
+  padding: 80px;
+}
+.pag3{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 150vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .fundo3{
-    background-size: cover;
-    z-index: -1;
-    width: 100%;
-    height: 150vh;
-    position: absolute;
+  background-size: cover;
+  z-index: -1;
+  width: 100%;
+  height: 150vh;
+  position: absolute;
 }
 /* From Uiverse.io by LeCurry24 */ 
 .card {
-  user-select: none;
-  opacity: 0.2; /* Cartões fora de foco são semitransparentes */
-  transform: scale(0.9); /* Reduz tamanho dos cartões fora de foco */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Suaviza a mudança */
-  --bg-card: #ffffff;
-  --primary: #6d28d9;
-  --primary-800: #ffffff;
-  --primary-shadow: #2e1065;
-  --light: #d9d9d9;
-  --zinc-800: #18181b;
-  --bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
-  display: flex;
-  position: relative;
-  
-  flex-direction: column;
-  gap: 0.15rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  justify-content: space-between;
-  padding: 1rem;
-  width: 600px;
-  height: 1200px;
-  background-color: var(--bg-card);
-  
-  border-radius: 1rem;
-  }
-  
-  .image_container {
-    overflow: hidden;
-    cursor: pointer;
-  
-    position: relative;
-    z-index: 5;
-  
-    width: 100%;
-    height:20rem;
-    background-color: var(--primary-800);
-  
-    border-radius: 0.5rem;
-  }
-  
-  .image_container .image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  
-    width: 50%;
-    height: 20vh;
-    fill: var(--light);
-  }
-  
-  .title {
-    overflow: clip;
-  
-    width: 100%;
-  
-    font-size: 4rem;
-    font-weight: 600;
-    color: black;
-    text-transform: capitalize;
-    text-wrap: nowrap;
-    text-overflow: ellipsis;
-  }
-  .caixoesPag3{
-    margin: 0;
-    
-    font-size: 5.5em;
-    color: rgb(255, 255, 255);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  .cart-button {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.35rem;
-    
-    bottom: 10px; /* Mantém o espaçamento de 10px */
-    position: relative; /* Certifique-se de que a posição está definida */
-    padding: 2rem;
-    width: 70%;
-    background-color: rgb(59, 172, 247);
-    font-size: 2rem;
-    font-weight: 500;
-    color: black;
-    text-wrap: nowrap;
-    
-    border: 2px solid hsla(262, 83%, 58%, 0.5);
-    border-radius: 0.5rem;
-    box-shadow: inset 0 0 0.25rem 1px var(--light);
+user-select: none;
+opacity: 0.2; /* Cartões fora de foco são semitransparentes */
+transform: scale(0.9); /* Reduz tamanho dos cartões fora de foco */
+transition: opacity 0.3s ease, transform 0.3s ease; /* Suaviza a mudança */
+--bg-card: #ffffff;
+--primary: #6d28d9;
+--primary-800: #ffffff;
+--primary-shadow: #2e1065;
+--light: #d9d9d9;
+--zinc-800: #18181b;
+--bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
+display: flex;
+position: relative;
+
+flex-direction: column;
+gap: 0.15rem;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+justify-content: space-between;
+padding: 1rem;
+width: 600px;
+height: 1200px;
+background-color: var(--bg-card);
+
+border-radius: 1rem;
 }
-  .cart-button:hover{
-    background-color: rgb(59, 172, 247, 0.8);
-  }
-  .comprar{
-    display: flex;
-    flex-basis: 200;
-  }
-  .description{
-    color: black;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-align: justify;
-    font-size: 1.2em;
-  }
-  .price{
-    bottom: 0;
-    position: relative;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 3em;
-  }
+
+.image_container {
+  overflow: hidden;
+  cursor: pointer;
+
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  height:20rem;
+  background-color: var(--primary-800);
+
+  border-radius: 0.5rem;
+}
+
+.image_container .image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 50%;
+  height: 20vh;
+  fill: var(--light);
+}
+
+.title {
+  overflow: clip;
+
+  width: 100%;
+
+  font-size: 4rem;
+  font-weight: 600;
+  color: black;
+  text-transform: capitalize;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+.caixoesPag3{
+  margin: 0;
+  
+  font-size: 5.5em;
+  color: rgb(255, 255, 255);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.cart-button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  
+  bottom: 10px; /* Mantém o espaçamento de 10px */
+  position: relative; /* Certifique-se de que a posição está definida */
+  padding: 2rem;
+  width: 70%;
+  background-color: rgb(59, 172, 247);
+  font-size: 2rem;
+  font-weight: 500;
+  color: black;
+  text-wrap: nowrap;
+  
+  border: 2px solid hsla(262, 83%, 58%, 0.5);
+  border-radius: 0.5rem;
+  box-shadow: inset 0 0 0.25rem 1px var(--light);
+}
+.cart-button:hover{
+  background-color: rgb(59, 172, 247, 0.8);
+}
+.comprar{
+  display: flex;
+  flex-basis: 200;
+}
+.description{
+  color: black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: justify;
+  font-size: 1.2em;
+}
+.price{
+  bottom: 0;
+  position: relative;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3em;
+}
 
 .caixoesCarrossel{
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  left: 35%;
-  width: 80%;
-  top: 235%;
+display: flex;
+flex-direction: row;
+position: absolute;
+left: 35%;
+width: 80%;
+top: 235%;
 }
 
 button.prev, button.next {
-    position: absolute;
-    top: 265%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 1.5em;
-    z-index: 100;
+  position: absolute;
+  top: 265%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.5em;
+  z-index: 100;
 }
 
 button.prev {
-    left: 10px;
+  left: 10px;
 }
 
 button.next {
-    right: 10px;
+  right: 10px;
 }
 
 button.prev:hover, button.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 .card.visible{
-  opacity: 1;
-  display: visible;
+opacity: 1;
+display: visible;
 }
 
 .carousel {
-  display: flex;
-  transition: transform 0.5s ease; /* Animação da transição */
+display: flex;
+transition: transform 0.5s ease; /* Animação da transição */
 }
 .desconto{
-  font-size: 28px;
+font-size: 28px;
 }
 #pesquisa{
-  width: 200px;
-  height: 30px;
-  border-radius: 1rem;
-  outline: none;
+width: 200px;
+height: 30px;
+border-radius: 1rem;
+outline: none;
 }
 .pesquisaButao{
-  height: 30px;
-  border-radius: 2rem;
-  outline: none;
-  cursor: pointer;
+height: 30px;
+border-radius: 2rem;
+outline: none;
+cursor: pointer;
 }
 .pesquisaButao:hover{
-  background-color: rgb(224, 219, 219);
+background-color: rgb(224, 219, 219);
 }
 .pag4{
-  top: 390%;
-  background-image: url(./imagens/27844418-velorio-branco-rosas-em-sombrio-fundo-com-copia-de-espaco-gratis-foto.jpg);
-  background-size: cover;
-  height: 115vh;
-  width: 100%;
-  position: absolute;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  background-color: gray;
+top: 390%;
+background-image: url(./imagens/27844418-velorio-branco-rosas-em-sombrio-fundo-com-copia-de-espaco-gratis-foto.jpg);
+background-size: cover;
+height: 115vh;
+width: 100%;
+position: absolute;
+align-items: center;
+text-align: center;
+justify-content: center;
+background-color: gray;
 }
 .pag4 h1{
-  margin: 0;
-  color: white;
-  font-size: 5.5em;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+margin: 0;
+color: white;
+font-size: 5.5em;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .card-flores{
-  box-shadow: black -3px -3px 8px 10px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-  width: 600px;
-  height: 90vh;
-  background-color: white;
-  border-radius: 1rem;
+box-shadow: black -3px -3px 8px 10px;
+padding: 20px;
+display: flex;
+flex-direction: column;
+position: relative;
+left: 50%;
+transform: translate(-50%);
+width: 600px;
+height: 90vh;
+background-color: white;
+border-radius: 1rem;
 }
 .card-flores h1{
-  font-size: 3em;
-  background-color: gray;
-  padding: 5px;
-  border-radius: 1rem;
-  z-index: 1;
-  width: 90%;
-  left: 50%;
-  transform: translate(-50%);
-  position: relative;
-  top: 10px;
+font-size: 3em;
+background-color: gray;
+padding: 5px;
+border-radius: 1rem;
+z-index: 1;
+width: 90%;
+left: 50%;
+transform: translate(-50%);
+position: relative;
+top: 10px;
 }
 
 .radio{
-  margin-top: 0;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  width: 100%;
-  left: 50%;
-  height: 73vh;
-  position: relative;
-  transform: translate(-50%);
-  justify-content: space-evenly;
+margin-top: 0;
+display: flex;
+flex-direction: column;
+text-align: left;
+width: 100%;
+left: 50%;
+height: 73vh;
+position: relative;
+transform: translate(-50%);
+justify-content: space-evenly;
 }
 .radio div{
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: flex-start;
-  text-align: left;
-  font-size: 3em;
+display: flex;
+align-items: center;
+width: 100%;
+justify-content: flex-start;
+text-align: left;
+font-size: 3em;
 }
 input[type="radio"] {
-  width: 30px;
-  height: 30px;
+width: 30px;
+height: 30px;
 }
 .radio button{
-  top: 105%;
-  position: absolute;
+top: 105%;
+position: absolute;
 }
 .pesquisarCoroa{
-  width: 90%;
-  cursor: pointer;
-  left: 50%;
-  transform: translate(-50%);
-  height: 5vh;
-  border-radius: 1rem;
-  padding: 5px;
-  font-size: 1.2em;
-  color: white;
-  background-color: gray;
+width: 90%;
+cursor: pointer;
+left: 50%;
+transform: translate(-50%);
+height: 5vh;
+border-radius: 1rem;
+padding: 5px;
+font-size: 1.2em;
+color: white;
+background-color: gray;
 }
 .pesquisarCoroa:hover{
-  background-color: rgb(194, 189, 189);
+background-color: rgb(194, 189, 189);
 }
 .mensagem{
-  width: 100%;
-  height: 20vh;
-  background-color: black;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  text-align: center;
+width: 100%;
+height: 20vh;
+background-color: black;
+position: relative;
+display: flex;
+flex-direction: column;
+color: white;
+text-align: center;
 }
 .mensagem-texto{
-  width: 100%;
-  height: 15vh;
-  margin-top: 0;
-  align-items: center;
-  justify-content: center;
-  display: flex;
+width: 100%;
+height: 15vh;
+margin-top: 0;
+align-items: center;
+justify-content: center;
+display: flex;
 }
 .mensagem-texto input{
-  width: 500px;
-  height: 50px;
-  outline: none;
-  font-size: 1.2em;
-  border-radius: 1rem;
-  padding-left: 10px;
+width: 500px;
+height: 50px;
+outline: none;
+font-size: 1.2em;
+border-radius: 1rem;
+padding-left: 10px;
 
 }
 .mensagem-texto button{
-  margin-left: 5px;
-  width: 100px;
-  height: 50px;
-  font-size: 1.5em;
-  cursor: pointer;
-  border-radius: 1rem;
+margin-left: 5px;
+width: 100px;
+height: 50px;
+font-size: 1.5em;
+cursor: pointer;
+border-radius: 1rem;
 }
 .mensagem-texto button:hover{
-  background-color: rgb(223, 218, 218);
+background-color: rgb(223, 218, 218);
 }
 .texto-mensagem{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .card-flores-tradicional{
-  width: 100%;
-  height: 120vh;
-  justify-content: center;
-  top: 520%;
-  position: absolute;
+width: 100%;
+height: 120vh;
+justify-content: center;
+top: 520%;
+position: absolute;
 
 }
 .escolher_flor{
-  font-size: 3em !important;
-  margin-top: 10px;
+font-size: 3em !important;
+margin-top: 10px;
 }
 .card-tradicional{
-  justify-content: space-between;
-  display: flex;
-  flex-direction: column;
-  width: 600px;
-  height: 112vh;
-  border-radius: 1rem;
-  background-color: white;
-  margin: 50px;
-  padding: 10px;
-  border: solid black 2px;
-  box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.8);
+justify-content: space-between;
+display: flex;
+flex-direction: column;
+width: 600px;
+height: 112vh;
+border-radius: 1rem;
+background-color: white;
+margin: 50px;
+padding: 10px;
+border: solid black 2px;
+box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.8);
 }
 .carouselflores{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-evenly;
+display: flex;
+flex-direction: row;
+width: 100%;
+justify-content: space-evenly;
 }
 .image_containerFlores{
-  width: 100%;
-  height: 35vh;
+width: 100%;
+height: 35vh;
 }
 .image_containerFlores img{
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  margin: 0;
-  padding: 0;
+width: 100%;
+height: 100%;
+background-size: cover;
+margin: 0;
+padding: 0;
 }
 .title-coroas{
-  font-size: 3.5em;
-  text-align: center;
+font-size: 3.5em;
+text-align: center;
 }
 .price-tradicional{
-  font-size: 2em;
+font-size: 2em;
 }
 .card-flores-minimalista{
-  width: 100%;
-  height: 120vh;
-  justify-content: center;
-  top: 520%;
-  position: absolute;
+width: 100%;
+height: 120vh;
+justify-content: center;
+top: 520%;
+position: absolute;
 }
 .card-flores-religiosa{
-  width: 100%;
-  height: 120vh;
-  justify-content: center;
-  top: 520%;
-  position: absolute;
+width: 100%;
+height: 120vh;
+justify-content: center;
+top: 520%;
+position: absolute;
 }
 /* From Uiverse.io by vinodjangid07 */ 
 .cartBtn {
-  width: 185px;
-  height: 105px;
-  border: none;
-  margin-left: 5px;
-  border-radius: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 10px;
-  border-radius: 0.5rem;
-  gap: 7px;
-  color: white;
-  font-weight: 500;
-  position: relative;
-  background-color: rgb(29, 29, 29);
-  box-shadow: 0 20px 30px -7px rgba(27, 27, 27, 0.219);
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  overflow: hidden;
+width: 185px;
+height: 105px;
+border: none;
+margin-left: 5px;
+border-radius: 0px;
+display: flex;
+align-items: center;
+justify-content: center;
+bottom: 10px;
+border-radius: 0.5rem;
+gap: 7px;
+color: white;
+font-weight: 500;
+position: relative;
+background-color: rgb(29, 29, 29);
+box-shadow: 0 20px 30px -7px rgba(27, 27, 27, 0.219);
+transition: all 0.3s ease-in-out;
+cursor: pointer;
+overflow: hidden;
 }
 
 .cart {
-  z-index: 2;
+z-index: 2;
 }
 
 .cartBtn:active {
-  transform: scale(0.96);
+transform: scale(0.96);
 }
 
 .product {
-  position: absolute;
-  width: 12px;
-  border-radius: 3px;
-  content: "";
-  left: 23px;
-  bottom: 23px;
-  opacity: 0;
-  z-index: 1;
-  fill: rgb(211, 211, 211);
+position: absolute;
+width: 12px;
+border-radius: 3px;
+content: "";
+left: 23px;
+bottom: 23px;
+opacity: 0;
+z-index: 1;
+fill: rgb(211, 211, 211);
 }
 
 .cartBtn:hover .product {
-  animation: slide-in-top 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+animation: slide-in-top 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @keyframes slide-in-top {
-  0% {
-    transform: translateY(-30px);
-    opacity: 1;
-  }
+0% {
+  transform: translateY(-30px);
+  opacity: 1;
+}
 
-  100% {
-    transform: translateY(0) rotate(-90deg);
-    opacity: 1;
-  }
+100% {
+  transform: translateY(0) rotate(-90deg);
+  opacity: 1;
+}
 }
 
 .cartBtn:hover .cart {
-  animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @keyframes slide-in-left {
-  0% {
-    transform: translateX(-10px);
-    opacity: 0;
-  }
+0% {
+  transform: translateX(-10px);
+  opacity: 0;
+}
 
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+100% {
+  transform: translateX(0);
+  opacity: 1;
+}
 }
 .card-flores-Exclusiva-em-branco{
-    width: 100%;
-    height: 120vh;
-  justify-content: center;
-    top: 520%;
-    position: absolute; 
+  width: 100%;
+  height: 120vh;
+justify-content: center;
+  top: 520%;
+  position: absolute; 
 }
 .card-flores-colorida{
-    width: 100%;
-    height: 120vh;
-    top: 520%;
-    justify-content: center;
-    position: absolute; 
+  width: 100%;
+  height: 120vh;
+  top: 520%;
+  justify-content: center;
+  position: absolute; 
 }
 .close-button {
-  position: absolute;
-  top: 10px;
-  z-index: 5;
-  right: 10px;
-  background-color: white;
-  border: solid black 2px;
-  border-radius: 50%;
-  padding: 5px;
-  width: 80px;
-  font-size: 50px;
-  cursor: pointer;
-  color: #000;
+position: absolute;
+top: 10px;
+z-index: 5;
+right: 10px;
+background-color: white;
+border: solid black 2px;
+border-radius: 50%;
+padding: 5px;
+width: 80px;
+font-size: 50px;
+cursor: pointer;
+color: #000;
 }
 
 .close-button:hover {
-  color: red;
+color: red;
 }
 .card-flores-tradicional, .card-flores-minimalista,
 .card-flores-religiosa, .card-flores-Exclusiva-em-branco,
 .card-flores-colorida, .card-ramalhete-tradicional, .card-ramalhete-minimalista,
 .card-ramalhete-religiosa, .card-ramalhete-em-branco, .card-ramalhete-colorido{
-  background-image: url(./imagens/beautiful-flowers-wooden-background.jpg);
-  background-size: cover;
-  width: 100%;
-  height: 130vh;
-  top: 505%;
+background-image: url(./imagens/beautiful-flowers-wooden-background.jpg);
+background-size: cover;
+width: 100%;
+height: 130vh;
+top: 505%;
 }
 .card-ramalhete-tradicional{
-  width: 100%;
-  height: 130vh;
-  top: 505%;
-  justify-content: center;
-  position: absolute; 
+width: 100%;
+height: 130vh;
+top: 505%;
+justify-content: center;
+position: absolute; 
 }
 .card-ramalhete-minimalista{
-  width: 100%;
-  height: 130vh;
-  top: 505%;
-  justify-content: center;
-  position: absolute;
+width: 100%;
+height: 130vh;
+top: 505%;
+justify-content: center;
+position: absolute;
 }
 .card-ramalhete-religiosa{
-  width: 100%;
-  height: 130vh;
-  top: 505%;
-  justify-content: center;
-  position: absolute;
+width: 100%;
+height: 130vh;
+top: 505%;
+justify-content: center;
+position: absolute;
 }
 .card-ramalhete-em-branco{
-  width: 100%;
-  height: 130vh;
-  top: 505%;
-  justify-content: center;
-  position: absolute;
+width: 100%;
+height: 130vh;
+top: 505%;
+justify-content: center;
+position: absolute;
 }
 .card-ramalhete-colorido{
-  width: 100%;
-  height: 130vh;
-  top: 505%;
-  justify-content: center;
-  position: absolute;
+width: 100%;
+height: 130vh;
+top: 505%;
+justify-content: center;
+position: absolute;
 }
 .carrinho{
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  right: 40px;
-  bottom: 50px;
-  position: fixed;
-  background-color: transparent;
-  z-index: 11;
-  justify-content: center;
-  filter: drop-shadow(0 0 1rem black);
-  box-shadow: 1px 1px 1rem black;
-  align-items: center;
+width: 70px;
+height: 70px;
+border-radius: 50%;
+right: 40px;
+bottom: 50px;
+position: fixed;
+background-color: transparent;
+z-index: 11;
+justify-content: center;
+filter: drop-shadow(0 0 1rem black);
+box-shadow: 1px 1px 1rem black;
+align-items: center;
 }
 .carrinho a{
-  align-items: center;
-  left: 50%;
-  position: relative;
-  transform: translate(-50%);
-  top: 17%;
-  background-size: cover;
-  justify-content: center;
-  text-align: center;
-  display: flex;
-  text-decoration: none;
-  width: 50px;
-  height: 50px;
-  z-index: 11;
+align-items: center;
+left: 50%;
+position: relative;
+transform: translate(-50%);
+top: 17%;
+background-size: cover;
+justify-content: center;
+text-align: center;
+display: flex;
+text-decoration: none;
+width: 50px;
+height: 50px;
+z-index: 11;
 }
 .carrinho a img{
-  width: 50px;
-  z-index: 11;
-  height: 50px;
-  background-size: cover;
+width: 50px;
+z-index: 11;
+height: 50px;
+background-size: cover;
 }
 .carrinho:hover , .carrinho a img:hover{
-  transform: scale(1.1);
+transform: scale(1.1);
 }
 #success-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1000;
 }
 
 .modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
+background-color: white;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+text-align: center;
 }
 
 .modal-content button {
-  background-color: #0077b6;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin-top: 10px;
-  border-radius: 5px;
-  cursor: pointer;
+background-color: #0077b6;
+color: white;
+border: none;
+padding: 10px 20px;
+margin-top: 10px;
+border-radius: 5px;
+cursor: pointer;
 }
 
 .modal-content button:hover {
-  background-color: #005580;
+background-color: #005580;
 }
 
 #pag5{
-  background-image: url(./imagens/open-food-containers.jpg);
-  background-size: cover;
-  position: absolute;
-  top: 505%;
-  width: 100%;
-  height: 100vh;
+background-image: url(./imagens/open-food-containers.jpg);
+background-size: cover;
+position: absolute;
+top: 505%;
+width: 100%;
+height: 100vh;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #pag5 h2, #pag5 h3 {
-  text-align: center;
-  color: #005a8d;
+text-align: center;
+color: #a2ddff;
+}
+
+
+#pag5::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura */
+z-index: 1;
+}
+
+#pag5 h2, #pag5 h3, .section-title, .item-list, .item, #pag5 button, #buffet-dish-list {
+position: relative;
+z-index: 2; /* Garante que o conteúdo fique acima da sobreposição */
 }
 
 .section-title {
-  margin-top: 20px;
-  background-color: #0073e6;
-  color: white !important;
-  padding: 8px;
-  border-radius: 5px;
+margin-top: 20px;
+background-color: #0073e6;
+color: white !important;
+padding: 8px;
+border-radius: 5px;
 }
 
 .item-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+justify-content: center;
 }
 
 .item {
-  width: 22%;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  text-align: center;
+width: 22%;
+background-color: white;
+border: 1px solid #ddd;
+border-radius: 5px;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+padding: 10px;
+text-align: center;
 }
 
 #pag5 button {
-  background-color: #0073e6;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  margin: 2px;
+background-color: #0073e6;
+color: white;
+border: none;
+padding: 5px 10px;
+border-radius: 5px;
+cursor: pointer;
+font-size: 14px;
+margin: 2px;
 }
 
 #pag5 button:hover {
-  background-color: #005a8d;
+background-color: #005a8d;
 }
 
 #buffet-dish-list {
-  margin: 20px auto;
-  max-width: 600px;
-  list-style: none;
-  padding: 0;
+margin: 20px auto;
+max-width: 600px;
+list-style: none;
+padding: 0;
 }
 
 #buffet-dish-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  padding: 8px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 10px;
+padding: 8px;
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 5px;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 .suporte{
-  top: 100%;
-  position: absolute;
-  width: 100%;
+top: 100%;
+position: absolute;
+width: 100%;
 }
 /* Estilo do modal */
 .modal {
-  display: none; /* Esconde o modal inicialmente */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+display: none; /* Esconde o modal inicialmente */
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+justify-content: center;
+align-items: center;
+z-index: 1000;
 }
 
 .modal-content {
-  position: relative;
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 600px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+position: relative;
+background-color: white;
+padding: 20px;
+border-radius: 8px;
+width: 90%;
+max-width: 600px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Botão de fechar (X) */
 .close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #333;
+position: absolute;
+top: 10px;
+right: 10px;
+background: none;
+border: none;
+font-size: 20px;
+font-weight: bold;
+cursor: pointer;
+color: #333;
 }
 
 .close-button:hover {
-  color: red;
+color: red;
 }
 
 iframe {
-  width: 100%;
-  height: 315px;
-  border: none;
-  border-radius: 5px;
+width: 100%;
+height: 315px;
+border: none;
+border-radius: 5px;
 }
