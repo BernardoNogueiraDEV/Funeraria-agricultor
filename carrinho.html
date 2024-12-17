@@ -127,6 +127,7 @@
     
         <div class="buttons">
             <button class="back-btn" onclick="history.back()">Voltar</button>
+            <button id="limpar-carrinho" onclick="limparCarrinho()">Limpar Carrinho</button>
             <button class="buy-btn" onclick="saveDataAndRedirect()">Comprar agora</button>
         </div>
     </div>
@@ -136,32 +137,36 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Recupera o carrinho do localStorage
     const carrinho = JSON.parse(localStorage.getItem('container')) || [];
-    console.log(carrinho);  // Verificar o conteúdo do carrinho
-
     const itensContainer = document.getElementById('itens-container');
     const totalElement = document.getElementById('total');
 
-    // Se o carrinho estiver vazio, exibir mensagem
     if (carrinho.length === 0) {
         itensContainer.innerHTML = '<p>Seu carrinho está vazio!</p>';
         totalElement.innerText = '';
         return;
     }
 
-    // Renderizar os itens do carrinho
     let total = 0;
     let itensHtml = ''; // Variável para armazenar o HTML dos itens
 
+    // Renderiza os itens do carrinho
     carrinho.forEach(item => {
-        // Verificar se o item.nome e item.valor estão definidos
-        if (item.nome && item.valor !== undefined) {
+        if (item.nome && item.valor !== undefined && item.quantidade !== undefined) {
+            const quantidade = item.quantidade || 1; // Assume quantidade 1 para itens sem quantidade
+            const totalItem = item.valor * quantidade; // Calcula o total por item (quantidade * valor unitário)
+
+            total += totalItem; // Soma o total geral
+
             itensHtml += `
                 <div class="item">
-                    <p><strong>Nome do Produto:</strong> ${item.nome}</p>
-                    <p><strong>Preço Unitário:</strong> R$ ${item.valor.toFixed(2)}</p>
+                    <div class="item-info">
+                        <p><strong>Produto:</strong> ${item.nome}</p>
+                        <p><strong>Preço Unitário:</strong> R$ ${(item.valor).toFixed(2)}</p>
+                        <p><strong>Quantidade:</strong> ${quantidade}</p>
+                        <p><strong>Total:</strong> R$ ${totalItem.toFixed(2)}</p>
+                    </div>
                 </div>
             `;
-            total += item.valor;
         } else {
             console.error("Item inválido:", item);
         }
@@ -170,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Inserir o HTML gerado no contêiner de itens
     itensContainer.innerHTML = itensHtml;
 
-    // Atualizar o total na página
+    // Atualizar o total geral na página
     totalElement.innerText = `Total: R$ ${total.toFixed(2)}`;
 });
 

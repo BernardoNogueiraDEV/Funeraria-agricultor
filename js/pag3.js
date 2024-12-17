@@ -82,6 +82,10 @@ function atualizarExibicao() {
     const rbranca = document.getElementsByClassName('card-ramalhete-em-branco')[0];
     const rcolorida = document.getElementsByClassName('card-ramalhete-colorido')[0];
 
+    const pag5 = document.querySelector('#pag5');
+
+    pag5.style.top = '635%';
+
     // Inicializa todos os elementos como não visíveis
     const elementos = [tradicional, minimalista, religiosa, branca, colorida, rtradicional, rmminimalista, rreligiosa, rbranca, rcolorida];
     elementos.forEach(elemento => {
@@ -159,18 +163,27 @@ function addToCart(button) {
     // Recuperar o nome e o valor a partir dos atributos 'data-nome' e 'data-valor'
     const nome = button.getAttribute('data-nome');
     const valor = parseFloat(button.getAttribute('data-valor')); // Garantir que seja um número
+    const quantidade = parseInt(button.getAttribute('data-quantidade')) || 1; // Recuperar a quantidade (padrão: 1)
 
-    // Verificar se nome e valor são válidos
-    if (!nome || isNaN(valor)) {
-        console.error('Nome ou valor inválidos');
+    // Verificar se nome, valor e quantidade são válidos
+    if (!nome || isNaN(valor) || isNaN(quantidade)) {
+        console.error('Nome, valor ou quantidade inválidos');
         return;
     }
 
     // Recupera o carrinho existente do localStorage ou inicializa um novo array
     const carrinho = JSON.parse(localStorage.getItem('container')) || [];
 
-    // Adiciona o novo item ao carrinho
-    carrinho.push({ nome, valor });
+    // Verifica se o item já existe no carrinho
+    const itemExistente = carrinho.find(item => item.nome === nome);
+
+    if (itemExistente) {
+        // Atualiza a quantidade do item existente
+        itemExistente.quantidade += quantidade;
+    } else {
+        // Adiciona o novo item ao carrinho
+        carrinho.push({ nome, valor, quantidade });
+    }
 
     // Salva o carrinho atualizado no localStorage
     localStorage.setItem('container', JSON.stringify(carrinho));
@@ -193,6 +206,14 @@ function addToCart(button) {
         mensagem.remove();
     }, 2000);
 }
+// Exemplo de função para limpar o carrinho
+function limparCarrinho() {
+    localStorage.removeItem('container'); // Limpa o carrinho
+    location.reload();
+}
+
+
+
 
 
 
@@ -240,4 +261,184 @@ function updateCartDisplay() {
 
     // Atualiza o total na página
     totalElement.innerText = `Total: R$ ${total.toFixed(2)}`;
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const dishList = document.getElementById("buffet-dish-list");
+    const toggleButton = document.getElementById("toggle-dish-view");
+    const finalizeButton = document.getElementById("finalize-button");
+
+    const checkboxes = document.querySelectorAll(".item input[type='checkbox']");
+
+    function updateLocalStorage() {
+        // Recupera o carrinho existente ou inicializa um array vazio
+        const carrinhoExistente = JSON.parse(localStorage.getItem("container")) || [];
+    
+        // Captura os itens do buffet atualmente exibidos
+        const buffetItems = Array.from(dishList.querySelectorAll("li")).map(item => ({
+            nome: item.dataset.name,
+            valor: parseFloat(item.dataset.price),
+            quantidade: parseInt(item.dataset.quantity, 10)
+        }));
+    
+        // Adiciona ou atualiza os itens do buffet no carrinho existente
+        buffetItems.forEach(buffetItem => {
+            const itemExistente = carrinhoExistente.find(item => item.nome === buffetItem.nome);
+    
+            if (itemExistente) {
+                // Atualiza a quantidade do item existente (somente para buffet)
+                if (buffetItem.quantidade) {
+                    itemExistente.quantidade = buffetItem.quantidade;
+                }
+            } else {
+                // Adiciona o novo item ao carrinho
+                carrinhoExistente.push(buffetItem);
+            }
+        });
+    
+        // Salva o carrinho atualizado no localStorage
+        localStorage.setItem("container", JSON.stringify(carrinhoExistente));
+    }
+    
+    
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", () => {
+            const parent = checkbox.closest(".item");
+            const name = parent.dataset.name;
+            const price = parseFloat(parent.dataset.price);
+    
+            if (checkbox.checked) {
+                const listItem = document.createElement("li");
+                listItem.dataset.name = name;
+                listItem.dataset.price = price;
+                listItem.dataset.quantity = 100;
+    
+                listItem.innerHTML = `
+                    ${name} - <strong>R$ ${(price * 100).toFixed(2)}</strong> (100g)
+                    <div>
+                        <button class="decrease">-</button>
+                        <span class="quantity">100</span>g
+                        <button class="increase">+</button>
+                    </div>
+                `;
+                dishList.appendChild(listItem);
+    
+                addQuantityListeners(listItem);
+            } else {
+                const existingItem = dishList.querySelector(`li[data-name="${name}"]`);
+                if (existingItem) existingItem.remove();
+            }
+    
+            updateLocalStorage(); // Atualiza o localStorage
+        });
+    });
+    
+
+    toggleButton.addEventListener("click", () => {
+        dishList.style.display = dishList.style.display === "none" ? "block" : "none";
+    });
+
+    finalizeButton.addEventListener("click", () => {
+        alert("Pedido Finalizado!");
+    });
+
+    function addQuantityListeners(listItem) {
+        const decreaseButton = listItem.querySelector(".decrease");
+        const increaseButton = listItem.querySelector(".increase");
+        const quantitySpan = listItem.querySelector(".quantity");
+
+        decreaseButton.addEventListener("click", () => {
+            let quantity = parseInt(listItem.dataset.quantity, 10);
+            if (quantity > 100) {
+                quantity -= 100;
+                updateItem(quantity);
+            }
+        });
+
+        increaseButton.addEventListener("click", () => {
+            let quantity = parseInt(listItem.dataset.quantity, 10);
+            quantity += 100;
+            updateItem(quantity);
+        });
+
+        function updateItem(quantity) {
+            const price = parseFloat(listItem.dataset.price);
+            listItem.dataset.quantity = quantity;
+            quantitySpan.textContent = quantity;
+            listItem.querySelector("strong").textContent = `R$ ${(price * quantity).toFixed(2)}`;
+            updateLocalStorage(); // Atualiza o localStorage ao modificar a quantidade
+        }
+    }
+});
+function finalizeOrder() {
+    // Verificar se há itens no localStorage
+    const carrinho = JSON.parse(localStorage.getItem("buffetCart")) || [];
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio! Selecione itens antes de finalizar.");
+        return;
+    }
+
+    // Redirecionar para a página do carrinho
+    window.location.href = "carrinho.html";
+}
+
+
+
+function close_butao(){
+    const botao = document.querySelector('.close-button');
+    const close_butao = document.querySelector('#pag5');
+
+    close_butao.style.top = '505%';
+
+    botao = document.getElementsByClassName('card-flores-tradicional')[0].style.display='none';
+    
+    
+}
+const searchInput = document.getElementById('pesquisa');
+if (searchInput) {
+    searchInput.addEventListener('input', (event) => {
+        const valor = event.target.value.toLowerCase().trim();
+        const header = document.querySelector('header'); // Seleciona o header
+
+        // Garante que o header não suma
+        if (header) {
+            header.style.position = 'fixed'; // Fixando o header no topo
+            header.style.top = '0';
+        }
+
+        // Dicionário de palavras-chave e as seções correspondentes
+        const keywordsToSections = {
+            "caixão": ".pag3",  // Palavra-chave para a seção de Caixões
+            "caixões": ".pag3",
+            "flores": ".pag4",  // Palavra-chave para a seção de Flores
+            "quem somos": ".pag2",  // Palavra-chave para a seção "Quem Somos"
+            "sobre": ".pag2",
+            "promoções": ".mensagem",  // Palavra-chave para a seção de Promoções
+            "buffet": "#pag5", // Palavra-chave para a seção de Produtos
+            "serviços": ".pag6", // Palavra-chave para a seção de Serviços
+            "contato": ".mensagem", // Palavra-chave para a seção de Contato
+
+        };
+
+        // Encontrar a palavra-chave mais próxima
+        let foundSection = null;
+
+        // Percorre as palavras-chave do dicionário e verifica se o valor da pesquisa contém alguma delas
+        for (const keyword in keywordsToSections) {
+            if (valor.includes(keyword)) {
+                foundSection = document.querySelector(keywordsToSections[keyword]);
+                break; // Interrompe quando encontrar a primeira correspondência
+            }
+        }
+
+        // Se encontramos uma seção correspondente, rola até ela
+        if (foundSection) {
+            foundSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+} else {
+    console.error('Elemento com id="pesquisa" não encontrado!');
 }
