@@ -373,10 +373,6 @@ document.addEventListener("DOMContentLoaded", () => {
 function finalizeOrder() {
     // Verificar se há itens no localStorage
     const carrinho = JSON.parse(localStorage.getItem("buffetCart")) || [];
-    if (carrinho.length === 0) {
-        alert("Seu carrinho está vazio! Selecione itens antes de finalizar.");
-        return;
-    }
 
     // Redirecionar para a página do carrinho
     window.location.href = "carrinho.html";

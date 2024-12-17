@@ -31,6 +31,116 @@ header{
     margin-left: -5vh;
 
 }
+/* Header e Títulos */
+.titulo {
+  font-size: 4.5em !important; /* Reduz o tamanho do título */
+  top: -20px;
+}
+
+.inicio h1 {
+  font-size: 4em; /* Reduz tamanho do H1 */
+}
+
+.inicio h2 {
+  font-size: 2em; /* Reduz tamanho do H2 */
+  top: -60px;
+  left: 0;
+}
+
+/* Botões */
+.botão_conhecer {
+  width: 50%; /* Reduz o tamanho */
+  font-size: 1.5em;
+  padding: 15px;
+}
+
+/* Paginas */
+.pag2, .pag3 {
+  height: 100vh; /* Mantém altura proporcional */
+}
+
+.pag2 h1 {
+  font-size: 1.8em; /* Reduz tamanho do título */
+}
+
+.pag2 p, .pag2 ul {
+  font-size: 0.9em; /* Reduz tamanho do texto */
+}
+
+.card {
+  width: 90%; /* Reduz a largura dos cards */
+  height: auto;
+}
+
+.price {
+  font-size: 2.5em; /* Reduz o preço */
+}
+
+/* Breakpoints para ajustes adicionais */
+@media (max-width: 1200px) {
+  .titulo {
+      font-size: 3.5em !important;
+  }
+  .botão_conhecer {
+      width: 60%;
+      font-size: 1.3em;
+  }
+  .inicio h1 {
+      font-size: 3.5em;
+  }
+  .inicio h2 {
+      font-size: 1.6em;
+  }
+}
+
+@media (max-width: 768px) {
+  .titulo {
+      font-size: 2.8em !important;
+  }
+  .inicio h1 {
+      font-size: 2.8em;
+  }
+  .inicio h2 {
+      font-size: 1.4em;
+      top: -30px;
+  }
+  .botão_conhecer {
+      width: 70%;
+      font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo {
+      font-size: 2.2em !important;
+  }
+  .inicio h1 {
+      font-size: 2.2em;
+  }
+  .inicio h2 {
+      font-size: 1.2em;
+  }
+  .botão_conhecer {
+      width: 80%;
+      font-size: 1em;
+  }
+}
+.escolhaEstilo{
+  font-size: 1.2em !important;
+  background-color: gray;
+  padding: 5px;
+  border-radius: 1rem;
+  z-index: 1;
+  width: 90%;
+  justify-content: center !important;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  height: 50px;
+  left: 50%;
+  transform: translate(-50%);
+  position: relative;
+}
+
 
 body{
     margin: 0;
@@ -155,7 +265,7 @@ html{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    left: -100%;
+    left: -500%;
     position: relative;
     transition: 1.5s;
   }
@@ -507,7 +617,6 @@ button.prev:hover, button.next:hover {
   align-items: center;
   width: 100%;
   justify-content: flex-start;
-  margin-bottom: 50px;
   text-align: left;
   font-size: 3em;
 }
