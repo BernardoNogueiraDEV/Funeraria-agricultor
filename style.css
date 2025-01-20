@@ -19,6 +19,7 @@ header{
   backdrop-filter: blur(0);
   z-index: 5;
 
+
 }
 
 .fundo{
@@ -200,7 +201,7 @@ html{
   
 }
 .alinhar_rodape nav ul a{
-text-decoration: none
+text-decoration: none;
 }
 .alinhar_rodape nav ul a:hover{
 text-decoration: underline;
@@ -247,6 +248,7 @@ background-color: #e3e6e3;
   transform: rotate(-45deg);
 }
 
+
 .hamburger input:checked + svg .line-top-bottom {
   stroke-dasharray: 20 300;
   stroke-dashoffset: -32.42;
@@ -254,12 +256,14 @@ background-color: #e3e6e3;
 
 .alinhar_rodape{
   display: flex;
+  background-color: #333; /* Cor ao ser marcado */
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
 
 }
 nav{
+  background-color: #333;
   z-index: 3;
   width: 100%;
   display: flex;
@@ -267,7 +271,7 @@ nav{
   justify-content: space-evenly;
   left: -500%;
   position: relative;
-  transition: 1.5s;
+  transition: 1s;
 }
 a{
   color: white;
@@ -508,7 +512,9 @@ top: 235%;
 
 button.prev, button.next {
   position: absolute;
-  top: 265%;
+  top: 295%;
+  height: 800px;
+  width: 80px;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -516,7 +522,7 @@ button.prev, button.next {
   padding: 10px;
   cursor: pointer;
   font-size: 1.5em;
-  z-index: 100;
+  z-index: 2;
 }
 
 button.prev {
@@ -978,7 +984,7 @@ background-size: cover;
 position: absolute;
 top: 505%;
 width: 100%;
-height: 100vh;
+height: 110vh;
 font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -990,7 +996,7 @@ color: #a2ddff;
 
 #pag5::before {
 content: '';
-position: absolute;
+position: relative;
 top: 0;
 left: 0;
 width: 100%;
@@ -1113,4 +1119,50 @@ width: 100%;
 height: 315px;
 border: none;
 border-radius: 5px;
+}
+#buffet-dish-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+#buffet-dish-list li {
+  width: 400px;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  display: flex;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+#info-conta {
+  display: none; /* Inicialmente escondido */
+  position: absolute;
+  justify-content: space-evenly;
+  flex-direction: column;
+  top: 60px;
+  font-size: 2rem;
+  right: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  height: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+#info-conta span {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+.botaoRastreamento{
+  background-color: #333; 
+  color: #fff;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer;
 }

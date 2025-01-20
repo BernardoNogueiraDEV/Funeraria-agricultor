@@ -1,0 +1,244 @@
+[20-Jan-2025 02:07:49 Europe/Berlin] PHP Warning:  Undefined array key "nome_cliente" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 20
+[20-Jan-2025 02:07:49 Europe/Berlin] PHP Warning:  Undefined array key "rua" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 21
+[20-Jan-2025 02:07:49 Europe/Berlin] PHP Warning:  Undefined array key "numero" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 22
+[20-Jan-2025 02:07:49 Europe/Berlin] PHP Warning:  Undefined array key "bairro" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 23
+[20-Jan-2025 02:07:49 Europe/Berlin] PHP Warning:  Undefined array key "cidade" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 24
+[20-Jan-2025 02:07:49 Europe/Berlin] PHP Warning:  Undefined array key "estado" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 25
+[20-Jan-2025 02:07:49 Europe/Berlin] PHP Warning:  Undefined array key "cep" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 26
+[20-Jan-2025 02:07:49 Europe/Berlin] PHP Warning:  Undefined array key "payment" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 27
+[20-Jan-2025 02:07:49 Europe/Berlin] Received Total: 0
+[20-Jan-2025 02:07:49 Europe/Berlin] PHP Warning:  Undefined variable $calculatedTotal in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 42
+[20-Jan-2025 02:07:49 Europe/Berlin] Calculated Total: 
+[20-Jan-2025 02:07:49 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'nome_cliente' cannot be null in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php:51
+Stack trace:
+#0 C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php(51): mysqli_stmt->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 51
+[20-Jan-2025 04:51:25 Europe/Berlin] Received Total: 0
+[20-Jan-2025 04:51:25 Europe/Berlin] PHP Warning:  Undefined variable $calculatedTotal in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 43
+[20-Jan-2025 04:51:25 Europe/Berlin] Calculated Total: 
+[20-Jan-2025 04:51:25 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'card_brand' in 'field list' in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php:49
+Stack trace:
+#0 C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php(49): mysqli->prepare('INSERT INTO ven...')
+#1 {main}
+  thrown in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 49
+[20-Jan-2025 05:03:42 Europe/Berlin] Received Total: 0
+[20-Jan-2025 05:03:42 Europe/Berlin] Calculated Total: 0
+[20-Jan-2025 05:03:42 Europe/Berlin] Tracking Number: 
+[20-Jan-2025 05:03:42 Europe/Berlin] User Email: default_email@example.com
+[20-Jan-2025 05:03:48 Europe/Berlin] Email sent successfully to: default_email@example.com
+[20-Jan-2025 05:19:31 Europe/Berlin] Received Total: 0
+[20-Jan-2025 05:19:31 Europe/Berlin] Calculated Total: 0
+[20-Jan-2025 05:19:31 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php:52
+Stack trace:
+#0 C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php(52): mysqli->prepare('INSERT INTO ven...')
+#1 {main}
+  thrown in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 52
+[20-Jan-2025 05:23:41 Europe/Berlin] Received Total: 0
+[20-Jan-2025 05:23:41 Europe/Berlin] Calculated Total: 0
+[20-Jan-2025 05:23:41 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php:52
+Stack trace:
+#0 C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php(52): mysqli->prepare('INSERT INTO ven...')
+#1 {main}
+  thrown in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 52
+[20-Jan-2025 05:25:26 Europe/Berlin] Received Total: 0
+[20-Jan-2025 05:25:26 Europe/Berlin] Calculated Total: 0
+[20-Jan-2025 05:25:26 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php:52
+Stack trace:
+#0 C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php(52): mysqli->prepare('INSERT INTO ven...')
+#1 {main}
+  thrown in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 52
+[20-Jan-2025 05:34:45 Europe/Berlin] Nome Cliente: Bernardo Alves Nogueira
+[20-Jan-2025 05:34:45 Europe/Berlin] Rua: Magnolia
+[20-Jan-2025 05:34:45 Europe/Berlin] Número: 132
+[20-Jan-2025 05:34:45 Europe/Berlin] Bairro: Henriquinho
+[20-Jan-2025 05:34:45 Europe/Berlin] Cidade: Cachoeira da Prata
+[20-Jan-2025 05:34:45 Europe/Berlin] Estado: MG
+[20-Jan-2025 05:34:45 Europe/Berlin] CEP: 35765000
+[20-Jan-2025 05:34:45 Europe/Berlin] Método de Pagamento: cartao
+[20-Jan-2025 05:34:45 Europe/Berlin] Número do Cartão: 4092 8001 3696 1954
+[20-Jan-2025 05:34:45 Europe/Berlin] Validade do Cartão: 08/27
+[20-Jan-2025 05:34:45 Europe/Berlin] CVV do Cartão: 201
+[20-Jan-2025 05:34:45 Europe/Berlin] Marca do Cartão: 
+[20-Jan-2025 05:34:45 Europe/Berlin] Número de Rastreamento: 
+[20-Jan-2025 05:34:45 Europe/Berlin] Received Total: 0
+[20-Jan-2025 05:34:45 Europe/Berlin] Calculated Total: 0
+[20-Jan-2025 05:34:45 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php:67
+Stack trace:
+#0 C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php(67): mysqli->prepare('INSERT INTO ven...')
+#1 {main}
+  thrown in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 67
+[20-Jan-2025 05:45:09 Europe/Berlin] Nome Cliente: Bernardo Alves Nogueira
+[20-Jan-2025 05:45:09 Europe/Berlin] Rua: Magnolia
+[20-Jan-2025 05:45:09 Europe/Berlin] Número: 132
+[20-Jan-2025 05:45:09 Europe/Berlin] Bairro: Henriquinho
+[20-Jan-2025 05:45:09 Europe/Berlin] Cidade: Cachoeira da Prata
+[20-Jan-2025 05:45:09 Europe/Berlin] Estado: MG
+[20-Jan-2025 05:45:09 Europe/Berlin] CEP: 35765000
+[20-Jan-2025 05:45:09 Europe/Berlin] Método de Pagamento: cartao
+[20-Jan-2025 05:45:09 Europe/Berlin] Número do Cartão: 4092 8001 3696 1954
+[20-Jan-2025 05:45:09 Europe/Berlin] Validade do Cartão: 08/27
+[20-Jan-2025 05:45:09 Europe/Berlin] CVV do Cartão: 201
+[20-Jan-2025 05:45:09 Europe/Berlin] Marca do Cartão: 
+[20-Jan-2025 05:45:09 Europe/Berlin] Número de Rastreamento: 
+[20-Jan-2025 05:45:09 Europe/Berlin] Received Total: 0
+[20-Jan-2025 05:45:09 Europe/Berlin] Calculated Total: 0
+[20-Jan-2025 05:45:09 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php:67
+Stack trace:
+#0 C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php(67): mysqli->prepare('INSERT INTO ven...')
+#1 {main}
+  thrown in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 67
+[20-Jan-2025 06:03:30 Europe/Berlin] PHP Warning:  Undefined array key "nome_cliente" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 20
+[20-Jan-2025 06:03:30 Europe/Berlin] PHP Warning:  Undefined array key "rua" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 21
+[20-Jan-2025 06:03:30 Europe/Berlin] PHP Warning:  Undefined array key "numero" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 22
+[20-Jan-2025 06:03:30 Europe/Berlin] PHP Warning:  Undefined array key "bairro" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 23
+[20-Jan-2025 06:03:30 Europe/Berlin] PHP Warning:  Undefined array key "cidade" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 24
+[20-Jan-2025 06:03:30 Europe/Berlin] PHP Warning:  Undefined array key "estado" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 25
+[20-Jan-2025 06:03:30 Europe/Berlin] PHP Warning:  Undefined array key "cep" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 26
+[20-Jan-2025 06:03:30 Europe/Berlin] PHP Warning:  Undefined array key "payment" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 27
+[20-Jan-2025 06:03:30 Europe/Berlin] Nome Cliente: 
+[20-Jan-2025 06:03:30 Europe/Berlin] Rua: 
+[20-Jan-2025 06:03:30 Europe/Berlin] Número: 
+[20-Jan-2025 06:03:30 Europe/Berlin] Bairro: 
+[20-Jan-2025 06:03:30 Europe/Berlin] Cidade: 
+[20-Jan-2025 06:03:30 Europe/Berlin] Estado: 
+[20-Jan-2025 06:03:30 Europe/Berlin] CEP: 
+[20-Jan-2025 06:03:30 Europe/Berlin] Método de Pagamento: 
+[20-Jan-2025 06:03:30 Europe/Berlin] Número do Cartão: 
+[20-Jan-2025 06:03:30 Europe/Berlin] Validade do Cartão: 
+[20-Jan-2025 06:03:30 Europe/Berlin] CVV do Cartão: 
+[20-Jan-2025 06:03:30 Europe/Berlin] Marca do Cartão: 
+[20-Jan-2025 06:03:30 Europe/Berlin] Número de Rastreamento: a
+[20-Jan-2025 06:03:30 Europe/Berlin] Received Total: 0
+[20-Jan-2025 06:03:30 Europe/Berlin] Calculated Total: 0
+[20-Jan-2025 06:03:30 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php:67
+Stack trace:
+#0 C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php(67): mysqli->prepare('INSERT INTO ven...')
+#1 {main}
+  thrown in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 67
+[20-Jan-2025 06:06:01 Europe/Berlin] Nome Cliente: Bernardo Alves Nogueira
+[20-Jan-2025 06:06:01 Europe/Berlin] Rua: magnolia
+[20-Jan-2025 06:06:01 Europe/Berlin] Número: 132
+[20-Jan-2025 06:06:01 Europe/Berlin] Bairro: henriquinho
+[20-Jan-2025 06:06:01 Europe/Berlin] Cidade: Cachoeira da Prata
+[20-Jan-2025 06:06:01 Europe/Berlin] Estado: MG
+[20-Jan-2025 06:06:01 Europe/Berlin] CEP: 35765000
+[20-Jan-2025 06:06:01 Europe/Berlin] Método de Pagamento: cartao
+[20-Jan-2025 06:06:01 Europe/Berlin] Número do Cartão: 4092 8001 3696 1954
+[20-Jan-2025 06:06:01 Europe/Berlin] Validade do Cartão: 08/27
+[20-Jan-2025 06:06:01 Europe/Berlin] CVV do Cartão: 201
+[20-Jan-2025 06:06:01 Europe/Berlin] Marca do Cartão: 
+[20-Jan-2025 06:06:01 Europe/Berlin] Número de Rastreamento: 
+[20-Jan-2025 06:06:01 Europe/Berlin] Received Total: 0
+[20-Jan-2025 06:06:01 Europe/Berlin] Calculated Total: 0
+[20-Jan-2025 06:06:01 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php:67
+Stack trace:
+#0 C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php(67): mysqli->prepare('INSERT INTO ven...')
+#1 {main}
+  thrown in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 67
+[20-Jan-2025 06:10:20 Europe/Berlin] Nome Cliente: Bernardo Alves Nogueira
+[20-Jan-2025 06:10:20 Europe/Berlin] Rua: magnolia
+[20-Jan-2025 06:10:20 Europe/Berlin] Número: 132
+[20-Jan-2025 06:10:20 Europe/Berlin] Bairro: henriquinho
+[20-Jan-2025 06:10:20 Europe/Berlin] Cidade: Cachoeira da Prata
+[20-Jan-2025 06:10:20 Europe/Berlin] Estado: MG
+[20-Jan-2025 06:10:20 Europe/Berlin] CEP: 35765000
+[20-Jan-2025 06:10:20 Europe/Berlin] Método de Pagamento: cartao
+[20-Jan-2025 06:10:20 Europe/Berlin] Número do Cartão: 4092 8001 3696 1954
+[20-Jan-2025 06:10:20 Europe/Berlin] Validade do Cartão: 08/27
+[20-Jan-2025 06:10:20 Europe/Berlin] CVV do Cartão: 201
+[20-Jan-2025 06:10:20 Europe/Berlin] Marca do Cartão: 
+[20-Jan-2025 06:10:20 Europe/Berlin] Número de Rastreamento: 
+[20-Jan-2025 06:10:20 Europe/Berlin] Received Total: 0
+[20-Jan-2025 06:10:20 Europe/Berlin] Calculated Total: 0
+[20-Jan-2025 06:10:20 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php:68
+Stack trace:
+#0 C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php(68): mysqli->prepare('INSERT INTO ven...')
+#1 {main}
+  thrown in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 68
+[20-Jan-2025 06:11:31 Europe/Berlin] Nome Cliente: Bernardo Alves Nogueira
+[20-Jan-2025 06:11:31 Europe/Berlin] Rua: magnolia
+[20-Jan-2025 06:11:31 Europe/Berlin] Número: 132
+[20-Jan-2025 06:11:31 Europe/Berlin] Bairro: henriquinho
+[20-Jan-2025 06:11:31 Europe/Berlin] Cidade: Cachoeira da Prata
+[20-Jan-2025 06:11:31 Europe/Berlin] Estado: MG
+[20-Jan-2025 06:11:31 Europe/Berlin] CEP: 35765000
+[20-Jan-2025 06:11:31 Europe/Berlin] Método de Pagamento: cartao
+[20-Jan-2025 06:11:31 Europe/Berlin] Número do Cartão: 4092 8001 3696 1954
+[20-Jan-2025 06:11:31 Europe/Berlin] Validade do Cartão: 08/27
+[20-Jan-2025 06:11:31 Europe/Berlin] CVV do Cartão: 201
+[20-Jan-2025 06:11:31 Europe/Berlin] Marca do Cartão: 
+[20-Jan-2025 06:11:31 Europe/Berlin] Número de Rastreamento: 
+[20-Jan-2025 06:11:31 Europe/Berlin] Received Total: 0
+[20-Jan-2025 06:11:31 Europe/Berlin] Calculated Total: 0
+[20-Jan-2025 06:11:31 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php:68
+Stack trace:
+#0 C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php(68): mysqli->prepare('INSERT INTO ven...')
+#1 {main}
+  thrown in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 68
+[20-Jan-2025 06:13:07 Europe/Berlin] Nome Cliente: Bernardo Alves Nogueira
+[20-Jan-2025 06:13:07 Europe/Berlin] Rua: magnolia
+[20-Jan-2025 06:13:07 Europe/Berlin] Número: 132
+[20-Jan-2025 06:13:07 Europe/Berlin] Bairro: henriquinho
+[20-Jan-2025 06:13:07 Europe/Berlin] Cidade: Cachoeira da Prata
+[20-Jan-2025 06:13:07 Europe/Berlin] Estado: MG
+[20-Jan-2025 06:13:07 Europe/Berlin] CEP: 35765000
+[20-Jan-2025 06:13:07 Europe/Berlin] Método de Pagamento: cartao
+[20-Jan-2025 06:13:07 Europe/Berlin] Número do Cartão: 4092 8001 3696 1954
+[20-Jan-2025 06:13:07 Europe/Berlin] Validade do Cartão: 08/27
+[20-Jan-2025 06:13:07 Europe/Berlin] CVV do Cartão: 201
+[20-Jan-2025 06:13:07 Europe/Berlin] Marca do Cartão: 
+[20-Jan-2025 06:13:07 Europe/Berlin] Número de Rastreamento: 
+[20-Jan-2025 06:13:07 Europe/Berlin] Received Total: 0
+[20-Jan-2025 06:13:07 Europe/Berlin] Calculated Total: 0
+[20-Jan-2025 06:13:07 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php:68
+Stack trace:
+#0 C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php(68): mysqli_stmt->bind_param('sssssssssssssss', 'Bernardo Alves ...', 'magnolia', '132', 'henriquinho', 'Cachoeira da Pr...', 'MG', '35765000', 'cartao', '4092 8001 3696 ...', '08/27', '201', NULL, 0.0, '2025-01-20 06:1...')
+#1 {main}
+  thrown in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 68
+[20-Jan-2025 06:14:28 Europe/Berlin] Nome Cliente: Bernardo Alves Nogueira
+[20-Jan-2025 06:14:28 Europe/Berlin] Rua: Magnolia
+[20-Jan-2025 06:14:28 Europe/Berlin] Número: 132
+[20-Jan-2025 06:14:28 Europe/Berlin] Bairro: Henriquinho
+[20-Jan-2025 06:14:28 Europe/Berlin] Cidade: Cachoeira da Prata
+[20-Jan-2025 06:14:28 Europe/Berlin] Estado: MG
+[20-Jan-2025 06:14:28 Europe/Berlin] CEP: 35765000
+[20-Jan-2025 06:14:28 Europe/Berlin] Método de Pagamento: cartao
+[20-Jan-2025 06:14:28 Europe/Berlin] Número do Cartão: 4092 8001 3696 1954
+[20-Jan-2025 06:14:28 Europe/Berlin] Validade do Cartão: 08/27
+[20-Jan-2025 06:14:28 Europe/Berlin] CVV do Cartão: 201
+[20-Jan-2025 06:14:28 Europe/Berlin] Marca do Cartão: 
+[20-Jan-2025 06:14:28 Europe/Berlin] Número de Rastreamento: 
+[20-Jan-2025 06:14:28 Europe/Berlin] Received Total: 0
+[20-Jan-2025 06:14:28 Europe/Berlin] Calculated Total: 0
+[20-Jan-2025 06:14:28 Europe/Berlin] Tracking Number: 
+[20-Jan-2025 06:14:28 Europe/Berlin] User Email: default_email@example.com
+[20-Jan-2025 06:14:32 Europe/Berlin] Email sent successfully to: default_email@example.com
+[20-Jan-2025 06:14:47 Europe/Berlin] PHP Warning:  Undefined array key "nome_cliente" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 20
+[20-Jan-2025 06:14:47 Europe/Berlin] PHP Warning:  Undefined array key "rua" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 21
+[20-Jan-2025 06:14:47 Europe/Berlin] PHP Warning:  Undefined array key "numero" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 22
+[20-Jan-2025 06:14:47 Europe/Berlin] PHP Warning:  Undefined array key "bairro" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 23
+[20-Jan-2025 06:14:47 Europe/Berlin] PHP Warning:  Undefined array key "cidade" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 24
+[20-Jan-2025 06:14:47 Europe/Berlin] PHP Warning:  Undefined array key "estado" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 25
+[20-Jan-2025 06:14:47 Europe/Berlin] PHP Warning:  Undefined array key "cep" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 26
+[20-Jan-2025 06:14:47 Europe/Berlin] PHP Warning:  Undefined array key "payment" in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 27
+[20-Jan-2025 06:14:47 Europe/Berlin] Nome Cliente: 
+[20-Jan-2025 06:14:47 Europe/Berlin] Rua: 
+[20-Jan-2025 06:14:47 Europe/Berlin] Número: 
+[20-Jan-2025 06:14:47 Europe/Berlin] Bairro: 
+[20-Jan-2025 06:14:47 Europe/Berlin] Cidade: 
+[20-Jan-2025 06:14:47 Europe/Berlin] Estado: 
+[20-Jan-2025 06:14:47 Europe/Berlin] CEP: 
+[20-Jan-2025 06:14:47 Europe/Berlin] Método de Pagamento: 
+[20-Jan-2025 06:14:47 Europe/Berlin] Número do Cartão: 
+[20-Jan-2025 06:14:47 Europe/Berlin] Validade do Cartão: 
+[20-Jan-2025 06:14:47 Europe/Berlin] CVV do Cartão: 
+[20-Jan-2025 06:14:47 Europe/Berlin] Marca do Cartão: 
+[20-Jan-2025 06:14:47 Europe/Berlin] Número de Rastreamento: 1
+[20-Jan-2025 06:14:47 Europe/Berlin] Received Total: 0
+[20-Jan-2025 06:14:47 Europe/Berlin] Calculated Total: 0
+[20-Jan-2025 06:14:47 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'nome_cliente' cannot be null in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php:72
+Stack trace:
+#0 C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php(72): mysqli_stmt->execute()
+#1 {main}
+  thrown in C:\xampp\htdocs\Funeraria-agricultor-main\Funeraria-agricultor-master\php\enviar.php on line 72

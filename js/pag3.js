@@ -4,8 +4,10 @@ const carousel = document.querySelector('.carousel'); // Seleciona o contêiner 
 
 function updateVisibility() {
     // Atualiza a posição do carrossel
-    const offset = -currentIndex * 8; // Calcula o deslocamento com base no índice
-    carousel.style.transform = `translateX(${offset}%)`;
+    if (carousel) { // Check if carousel is not null
+        const offset = -currentIndex * 8; // Calcula o deslocamento com base no índice
+        carousel.style.transform = `translateX(${offset}%)`;
+    }
 
     // Atualiza a classe "visible" para o cartão atualmente selecionado
     cards.forEach((card, index) => {
@@ -38,8 +40,6 @@ function prevSlide() {
 }
 
 // Inicializa a visibilidade correta no início
-updateVisibility();
-
 
 const valores = document.getElementsByClassName('valor');
 const desconto = document.getElementsByClassName('desconto');
@@ -129,6 +129,20 @@ function atualizarExibicao() {
         document.location.href = '#ramalhete-colorido';
     }
 }
+function direto(elemento) {
+    var nomeProduto = elemento.getAttribute('data-nome');
+    var valorProduto = elemento.getAttribute('data-valor');
+    var total = elemento.getAttribute('data-total'); 
+
+    var url = './compra.php?nome=' + encodeURIComponent(nomeProduto) + 
+              '&valor=' + encodeURIComponent(valorProduto) + 
+              '&total=' + encodeURIComponent(total);
+
+    console.log('URL gerada:', url); // Adicione esta linha para verificar a URL
+    window.location.href = url;
+}
+
+
 
 function comprar(button) {
     
@@ -137,7 +151,7 @@ function comprar(button) {
     var valorProduto = button.getAttribute('data-valor');
 
     // Redireciona para a página de compra com os parâmetros
-    window.location.href = './compra.html?nome=' + encodeURIComponent(nomeProduto) + '&valor=' + encodeURIComponent(valorProduto);
+    window.location.href = './compra.php?nome=' + encodeURIComponent(nomeProduto) + '&valor=' + encodeURIComponent(valorProduto);
 }
 let container = []; // Array para armazenar os itens no carrinho
 let subtotal = 0; // Total acumulado
@@ -186,6 +200,7 @@ function addToCart(button) {
     }
 
     // Salva o carrinho atualizado no localStorage
+    updateCartDisplay(); // Atualiza a exibição do carrinho
     localStorage.setItem('container', JSON.stringify(carrinho));
 
     // Exibe a mensagem de sucesso
@@ -375,7 +390,7 @@ function finalizeOrder() {
     const carrinho = JSON.parse(localStorage.getItem("buffetCart")) || [];
 
     // Redirecionar para a página do carrinho
-    window.location.href = "carrinho.html";
+    window.location.href = "carrinho.php";
 }
 
 
@@ -460,3 +475,22 @@ if (searchInput) {
                 modal.style.display = 'none';
             }
         });
+        const conta = document.getElementById('conta');
+        const infoConta = document.getElementById('info-conta');
+
+        conta.addEventListener('click', (e) => {
+            e.preventDefault(); // Evita o comportamento padrão do link
+            // Alterna a visibilidade da caixa de informações
+            infoConta.style.display = infoConta.style.display === 'none' || infoConta.style.display === '' ? 'flex' : 'none';
+        });
+
+        // Fecha a caixa se clicar fora dela
+        document.addEventListener('click', (e) => {
+            if (!infoConta.contains(e.target) && e.target !== conta) {
+                infoConta.style.display = 'none';
+            }
+        });
+        function logout(){
+            location.href = '../php/logout.php';
+
+        }

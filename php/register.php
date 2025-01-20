@@ -1,7 +1,7 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-include '../php/conexao.php';
+include './conexao.php';
 
 require '../vendor/autoload.php'; // Inclua o autoload do Composer
 
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Enviar e-mail
         $mail->send();
-        header('Location: ../Home.html');
+        header('Location: ../index.php');
     } catch (Exception $e) {
         echo "Erro ao enviar o e-mail: {$mail->ErrorInfo}";
     }

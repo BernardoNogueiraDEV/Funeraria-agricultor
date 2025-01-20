@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Cadastro</title>
+
+</head>
+<body>
+    <div class="container" id="container">
+        <!-- Formulario de Login -->
+        <div class="form-container login">
+            <h1>Login</h1>
+            <form action="./php/login.php" method="post">
+                <div class="form-group">
+                    <label for="email-login">Email</label>
+                    <input type="email" id="email-login" name="email" placeholder="Digite seu email">
+                </div>
+                <div class="form-group">
+                    <label for="password-login">Senha</label>
+                    <input type="password" id="password-login" name="senha" placeholder="Digite sua senha">
+                </div>
+                <button type="submit" name="submit" class="btn">Entrar</button>
+            </form>
+            <div class="toggle-link">
+                <p>Não tem uma conta? <a id="to-register">Cadastre-se</a></p>
+            </div>
+        </div>
+
+        <!-- Formulario de Registro -->
+        <div class="form-container register">
+            <h1>Cadastro</h1>
+            <form action="./php/registerConta.php" method="post">
+                <div class="form-group">
+                    <label for="name-register">Nome</label>
+                    <input type="text" id="name-register" name="nome" placeholder="Digite seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="email-register">Email</label>
+                    <input type="email" id="email-register" name="email" placeholder="Digite seu email">
+                </div>
+                <div class="form-group">
+                    <label for="password-register">Senha</label>
+                    <input type="password" id="password-register" name="senha" placeholder="Digite sua senha">
+                </div>
+                <button type="submit" name="submit" class="btn">Cadastrar</button>
+            </form>
+            <div class="toggle-link">
+                <p>Já tem uma conta? <a id="to-login">Entrar</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Obtém referências aos elementos
+        const container = document.getElementById('container');
+        const toRegister = document.getElementById('to-register');
+        const toLogin = document.getElementById('to-login');
+
+        // Adiciona evento para mudar para o cadastro
+        toRegister.addEventListener('click', () => {
+            container.classList.add('move');
+        });
+
+        // Adiciona evento para voltar ao login
+        toLogin.addEventListener('click', () => {
+            container.classList.remove('move');
+        });
+    </script>
+</body>
+</html>
+<style>
+    /* Reseta margens e paddings padrões */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Define estilo geral da página */
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f3f4f6;
+        overflow: hidden;
+    }
+
+    /* Container principal que agrupa as seções */
+    .container {
+        position: relative;
+        width: 400px;
+        height: 500px;
+    }
+
+    /* Estiliza cada formulário como um card */
+    .form-container {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        position: absolute;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    /* Define posição inicial do card de login */
+    .form-container.login {
+        transform: translateX(0);
+        z-index: 2;
+        opacity: 1;
+    }
+
+    /* Define posição inicial do card de cadastro */
+    .form-container.register {
+        transform: translateX(-100%);
+        z-index: 1;
+        opacity: 0;
+    }
+
+    /* Mostra o card de cadastro ao alternar */
+    .container.move .form-container.register {
+        transform: translateX(0);
+        z-index: 2;
+        opacity: 1;
+    }
+
+    /* Esconde o card de login ao alternar */
+    .container.move .form-container.login {
+        transform: translateX(100%);
+        z-index: 1;
+        opacity: 0;
+    }
+
+    /* Estilo dos títulos */
+    h1 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #333;
+    }
+
+    /* Estilo dos campos de formulário */
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #555;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+
+    .form-group input:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+    /* Botões de ação */
+    .btn {
+        width: 100%;
+        padding: 0.8rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+    /* Links para alternar entre login e cadastro */
+    .toggle-link {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .toggle-link a {
+        color: #007bff;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .toggle-link a:hover {
+        text-decoration: underline;
+    }
+</style>

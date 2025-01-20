@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+// Verifique se o e-mail foi enviado via URL
+$email = isset($_GET['email']) ? $_GET['email'] : null;
+
+// Salve o e-mail na sessão para usá-lo no envio de e-mail posteriormente
+if ($email) {
+    $_SESSION['user_email'] = $email;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -152,8 +165,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Renderiza os itens do carrinho
     carrinho.forEach(item => {
         if (item.nome && item.valor !== undefined && item.quantidade !== undefined) {
-            const quantidade = item.quantidade || 1; // Assume quantidade 1 para itens sem quantidade
-            const totalItem = item.valor * quantidade; // Calcula o total por item (quantidade * valor unitário)
+            const quantidade = item.quantidade || 1; // Assume quantidade 1 para itens sem quantidade 
+            const totalItem = item.valor * quantidade; // Calculate total for the item
 
             total += totalItem; // Soma o total geral
 
@@ -175,10 +188,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // Inserir o HTML gerado no contêiner de itens
     itensContainer.innerHTML = itensHtml;
 
-    // Atualizar o total geral na página
+    // Atualizar o total na página
     totalElement.innerText = `Total: R$ ${total.toFixed(2)}`;
 });
 
+function limparCarrinho() {
+    localStorage.removeItem('container');
+    document.getElementById('itens-container').innerHTML = '<p>Seu carrinho está vazio!</p>';
+    document.getElementById('total').innerText = '';
+}
 
 function saveDataAndRedirect() {
     const carrinho = JSON.parse(localStorage.getItem('container')) || [];
@@ -188,14 +206,18 @@ function saveDataAndRedirect() {
     // Obter o nome do primeiro item e o total
     if (carrinho.length > 0) {
         nome = carrinho.map(item => item.nome).join(', '); // Nome dos produtos separados por vírgula
-        total = carrinho.reduce((acc, item) => acc + item.valor, 0); // Soma o valor total
+        total = carrinho.reduce((acc, item) => acc + (item.valor * item.quantidade), 0); // Soma o valor total considerando a quantidade
     }
 
-    // Redireciona para a página compra.html com os parâmetros nome e total na URL
-    const generatedUrl = `./compra.html?nome=${encodeURIComponent(nome)}&total=${encodeURIComponent(total.toFixed(2))}`;
-    window.location.href = generatedUrl;
-    // Limpa o carrinho do localStorage após a compra
-    localStorage.removeItem('container'); // Remove os itens do carrinho
+    // Redireciona para a página compra.php com os parâmetros nome e total na URL
+    const generatedUrl = `./compra.php?nome=${encodeURIComponent(nome)}&total=${encodeURIComponent(total.toFixed(2))}`;
+    
+    // Prevent URL manipulation
+    if (total > 0) {
+        window.location.href = generatedUrl;
+    } else {
+        console.error("Total inválido, redirecionamento não realizado.");
+    }
 }
     </script>
     <script src="./js/pag3.js"></script>

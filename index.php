@@ -1,3 +1,14 @@
+<?php
+session_start();
+$email = isset($_GET['email']) ? $_GET['email'] : null;
+
+// Salve o e-mail na sessão para usá-lo no envio de e-mail posteriormente
+if ($email) {
+    $_SESSION['user_email'] = $email;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -47,6 +58,20 @@
 
                     <nav id="navegacao">
                         <ul>
+                            <a href="#" id="conta">Conta</a>
+                            <div id="info-conta">
+                                <span>Nome: <?php echo $_SESSION['nome']; ?></span><br>
+                                <span>Email: <?php echo $_SESSION['email']; ?></span><br>
+                                <span><a href="./rastreamento.php" class="botaoRastreamento">Rastreamento</a></span>
+                                <form action="./php/logout.php" method="post" style="display: inline;">
+                                    <button type="submit" style="background-color: #333; color: #fff; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;">
+                                        Logout
+                                    </button>
+                                </form>
+                            </div>
+                        </ul>
+
+                        <ul>
                             <a href="#caixao">Caixões</a>
                         </ul>
 
@@ -63,7 +88,7 @@
                         </ul>
 
                         <ul>
-                            <a href="#">Suporte</a>
+                            <a href="#suporte">Suporte</a>
                         </ul>
 
                         <ul>
@@ -147,7 +172,7 @@
                     </div>
 
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Caixão Básico 1" data-valor="750.00" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Caixão Básico 1" data-valor="750.00" data-total="750.00" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -186,7 +211,7 @@
                     </div>
 
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Caixão Básico 2" data-valor="550,00" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Caixão Básico 2" data-valor="550.00" data-total="550.00" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -224,7 +249,7 @@
                     </div>
 
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Caixão Básico 3" data-valor="950.00" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Caixão Básico 3" data-valor="950.00" data-total="950.00" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -262,7 +287,7 @@
                     </div>
 
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Caixão Básico 4" data-valor="650.00" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Caixão Básico 4" data-valor="650.00" data-total="650.00" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -300,7 +325,7 @@
                     </div>
 
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Caixão Premium 1" data-valor="999.90" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Caixão Premium 1" data-valor="999.90" data-total="999.90" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -338,7 +363,7 @@
                     </div>
 
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Caixão Premium 2" data-valor="1600.58" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Caixão Premium 2" data-valor="1600.58" data-total="1600.58" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -376,7 +401,7 @@
                     </div>
 
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Caixão Premium 3" data-valor="2050.00" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Caixão Premium 3" data-valor="2050.00" data-total="2050.00" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -414,7 +439,7 @@
                     </div>
 
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Caixão Premium 4" data-valor="3568.70" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Caixão Premium 4" data-valor="3568.70" data-total="3568.70" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -452,7 +477,7 @@
                     </div>
 
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Caixão Luxo 1" data-valor="6599.90" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Caixão Luxo 1" data-valor="6599.90" data-total="6599.90" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -490,7 +515,7 @@
                     </div>
 
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Caixão Luxo 2" data-valor="9999.90" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Caixão Luxo 2" data-valor="9999.90" data-total="9999.90" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -528,7 +553,7 @@
                     </div>
 
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Caixão Luxo 3" data-valor="5699.00" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Caixão Luxo 3" data-valor="5699.00" data-total="5699.00" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -566,7 +591,7 @@
                     </div>
 
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Caixão Luxo 4" data-valor="8958.90" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Caixão Luxo 4" data-valor="8958.90" data-total="8958.90" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -691,7 +716,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Coroa Tradicional 1" data-valor="350.00" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Coroa Tradicional 1" data-valor="350.00" data-total="350.00" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -726,7 +751,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Coroa Tradicional 2" data-valor="390.00" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Coroa Tradicional 2" data-valor="390.00" data-total="390.00" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -778,7 +803,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Coroa Minimalista 1" data-valor="480.00" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Coroa Minimalista 1" data-valor="480.00" data-total="480.00" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -813,7 +838,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Coroa Minimalista 2" data-preco="550.00" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Coroa Minimalista 2" data-preco="550.00" data-total="550.00" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -863,7 +888,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Coroa Religiosa 1" data-valor="654.10" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Coroa Religiosa 1" data-valor="654.10" data-total="654.10" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -898,7 +923,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Coroa Religiosa 2" data-valor="589.90" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Coroa Religiosa 2" data-valor="589.90" data-total="589.90" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -948,7 +973,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Coroa Branca 1" data-valor="519.99" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Coroa Branca 1" data-valor="519.99" data-total="519.99" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -983,7 +1008,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Coroa Branca 2" data-valor="559.99" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Coroa Branca 2" data-valor="559.99" data-total="559.99" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -1034,7 +1059,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Coroa Colorida 1" data-valor="899.00" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Coroa Colorida 1" data-valor="899.00" data-total="899.00" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -1069,7 +1094,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Coroa Colorida 2" data-valor="990.99" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Coroa Colorida 2" data-valor="990.99" data-total="990.99" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -1120,7 +1145,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Ramalhete Tradicional 1" data-valor="180.00" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Ramalhete Tradicional 1" data-valor="180.00" data-total="180.00" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -1155,7 +1180,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Ramalhete Tradicional 2" data-valor="125.00" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Ramalhete Tradicional 2" data-valor="125.00" data-total="125.00" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -1207,7 +1232,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Ramalhete Minimalista 1" data-valor="59.90" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Ramalhete Minimalista 1" data-valor="59.90" data-total="59.90" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -1242,7 +1267,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Ramalhete Minimalista 2" data-valor="79.90" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Ramalhete Minimalista 2" data-valor="79.90" data-total="79.90" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -1292,7 +1317,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Ramalhete Religioso 1" data-valor="49.99" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Ramalhete Religioso 1" data-valor="49.99" data-total="49.99" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -1328,7 +1353,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Ramalhete Religioso 2" data-valor="65.50" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Ramalhete Religioso 2" data-valor="65.50" data-total="65.50" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -1379,7 +1404,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Ramalhete Branco 1" data-valor="70.00" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Ramalhete Branco 1" data-valor="70.00" data-total="70.00" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -1414,7 +1439,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Ramalhete Branco 2" data-valor="74.99" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Ramalhete Branco 2" data-valor="74.99" data-total="74.99" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -1464,7 +1489,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Ramalhete Colorido 1" data-valor="115.90" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Ramalhete Colorido 1" data-valor="115.90" data-total="115.90" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -1499,7 +1524,7 @@
                     </div>
         
                     <div class="comprar">
-                        <button class="cart-button" data-nome="Ramalhete Colorido 2" data-valor="110.90" onclick="comprar(this)">
+                        <button class="cart-button" data-nome="Ramalhete Colorido 2" data-valor="110.90" data-total="110.90" onclick="direto(this)">
                             <span>Comprar</span>
                         </button>
                     
@@ -1518,7 +1543,7 @@
 
     </div>
     <div class="carrinho" >
-        <a href="./carrinho.html"><img src="./imagens/shopping-cart_3737151.png" loading="lazy" alt=""></a>
+        <a href="./carrinho.php"><img src="./imagens/shopping-cart_3737151.png" loading="lazy" alt=""></a>
     </div>
     <!-- Modal de confirmação -->
     <div id="success-modal" style="display: none;z-index: 10;">
@@ -1593,12 +1618,11 @@
     
         <!-- Botões de Controle -->
         <div class="buffet-buttons">
-            <button id="toggle-dish-view">Ocultar/Visualizar Selecionados</button>
             
             <button id="finalize-button" onclick="finalizeOrder()">Finalizar Pedido</button>
         </div>
     
-        <div class="suporte">
+        <div class="suporte" id="suporte">
             <footer style="background-color: #333; color: #fff; font-size: 20px; padding: 20px; text-align: center;">
                 <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
                     <!-- Coluna 1 -->
